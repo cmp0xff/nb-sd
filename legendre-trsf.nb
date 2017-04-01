@@ -1,0 +1,215 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6125,        205]
+NotebookOptionsPosition[      5694,        186]
+NotebookOutlinePosition[      6034,        201]
+CellTagsIndexPosition[      5991,        198]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LegendreTransform", "[", 
+   RowBox[{"A_", ",", "x_List", ",", "momenta_List", ",", 
+    RowBox[{"indep_:", 
+     RowBox[{"{", "t", "}"}]}]}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "momentaRelations", "}"}], ",", 
+    RowBox[{
+     RowBox[{"momentaRelations", "=", 
+      RowBox[{"MapThread", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           SubscriptBox["\[PartialD]", "#1"], "A"}], "\[Equal]", "#2"}], 
+         "&"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "momenta"}], "}"}]}], "]"}]}], ";", 
+     RowBox[{"sol1", "=", 
+      RowBox[{"Flatten", "@", 
+       RowBox[{"Solve", "[", 
+        RowBox[{"momentaRelations", ",", "x"}], "]"}]}]}], ";", 
+     RowBox[{"FullSimplify", "[", 
+      RowBox[{
+       RowBox[{"Expand", "[", 
+        RowBox[{
+         RowBox[{
+          SubsuperscriptBox["\[Sum]", 
+           RowBox[{"i", "=", "1"}], 
+           RowBox[{"Length", "@", "x"}]], 
+          RowBox[{
+           RowBox[{"x", "[", 
+            RowBox[{"[", "i", "]"}], "]"}], 
+           RowBox[{
+            SubscriptBox["\[PartialD]", 
+             RowBox[{"x", "[", 
+              RowBox[{"[", "i", "]"}], "]"}]], "A"}]}]}], "-", "A"}], "]"}], "/.",
+        "sol1"}], "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.700065186310878*^9, 3.700065350552216*^9}, {
+  3.7000653917360497`*^9, 3.7000653923676558`*^9}, {3.700065454414339*^9, 
+  3.700065454884612*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "V", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"l", " ", "=", " ", 
+  RowBox[{
+   RowBox[{
+    FractionBox["m1", "2"], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["\[PartialD]", "t"], 
+       RowBox[{"q1", "[", "t", "]"}]}], ")"}], "2"]}], "+", 
+   RowBox[{
+    FractionBox["m2", "2"], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SubscriptBox["\[PartialD]", "t"], 
+       RowBox[{"q2", "[", "t", "]"}]}], ")"}], "2"]}], "-", 
+   RowBox[{"V", "[", 
+    RowBox[{
+     RowBox[{"q1", "[", "t", "]"}], ",", 
+     RowBox[{"q2", "[", "t", "]"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"h", " ", "=", " ", 
+  RowBox[{"LegendreTransform", "[", 
+   RowBox[{"l", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["\[PartialD]", "t"], 
+       RowBox[{"q1", "[", "t", "]"}]}], ",", 
+      RowBox[{
+       SubscriptBox["\[PartialD]", "t"], 
+       RowBox[{"q2", "[", "t", "]"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"p1", "[", "t", "]"}], ",", 
+      RowBox[{"p2", "[", "t", "]"}]}], "}"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"LegendreTransform", "[", 
+  RowBox[{"h", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"p1", "[", "t", "]"}], ",", 
+     RowBox[{"p2", "[", "t", "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["\[PartialD]", "t"], 
+      RowBox[{"q1", "[", "t", "]"}]}], ",", 
+     RowBox[{
+      SubscriptBox["\[PartialD]", "t"], 
+      RowBox[{"q2", "[", "t", "]"}]}]}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.700065353175333*^9, 3.7000653804707623`*^9}, {
+  3.70006542776541*^9, 3.700065448101653*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   RowBox[{"V", "[", 
+    RowBox[{
+     RowBox[{"q1", "[", "t", "]"}], ",", 
+     RowBox[{"q2", "[", "t", "]"}]}], "]"}]}], "+", 
+  RowBox[{
+   FractionBox["1", "2"], " ", "m1", " ", 
+   SuperscriptBox[
+    RowBox[{
+     SuperscriptBox["q1", "\[Prime]",
+      MultilineFunction->None], "[", "t", "]"}], "2"]}], "+", 
+  RowBox[{
+   FractionBox["1", "2"], " ", "m2", " ", 
+   SuperscriptBox[
+    RowBox[{
+     SuperscriptBox["q2", "\[Prime]",
+      MultilineFunction->None], "[", "t", "]"}], "2"]}]}]], "Output",
+ CellChangeTimes->{{3.700065386519424*^9, 3.700065395610165*^9}, {
+  3.700065448993292*^9, 3.700065457834217*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   SuperscriptBox[
+    RowBox[{"p1", "[", "t", "]"}], "2"], 
+   RowBox[{"2", " ", "m1"}]], "+", 
+  FractionBox[
+   SuperscriptBox[
+    RowBox[{"p2", "[", "t", "]"}], "2"], 
+   RowBox[{"2", " ", "m2"}]], "+", 
+  RowBox[{"V", "[", 
+   RowBox[{
+    RowBox[{"q1", "[", "t", "]"}], ",", 
+    RowBox[{"q2", "[", "t", "]"}]}], "]"}]}]], "Output",
+ CellChangeTimes->{{3.700065386519424*^9, 3.700065395610165*^9}, {
+  3.700065448993292*^9, 3.7000654578375177`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "2"], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "2"}], " ", 
+     RowBox[{"V", "[", 
+      RowBox[{
+       RowBox[{"q1", "[", "t", "]"}], ",", 
+       RowBox[{"q2", "[", "t", "]"}]}], "]"}]}], "+", 
+    RowBox[{"m1", " ", 
+     SuperscriptBox[
+      RowBox[{
+       SuperscriptBox["q1", "\[Prime]",
+        MultilineFunction->None], "[", "t", "]"}], "2"]}], "+", 
+    RowBox[{"m2", " ", 
+     SuperscriptBox[
+      RowBox[{
+       SuperscriptBox["q2", "\[Prime]",
+        MultilineFunction->None], "[", "t", "]"}], "2"]}]}], 
+   ")"}]}]], "Output",
+ CellChangeTimes->{{3.700065386519424*^9, 3.700065395610165*^9}, {
+  3.700065448993292*^9, 3.700065457840571*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{55, Automatic}, {123, Automatic}},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (September 21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1489, 42, 206, "Input"],
+Cell[CellGroupData[{
+Cell[2072, 66, 1708, 53, 140, "Input"],
+Cell[3783, 121, 665, 20, 48, "Output"],
+Cell[4451, 143, 495, 15, 52, "Output"],
+Cell[4949, 160, 729, 23, 48, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
