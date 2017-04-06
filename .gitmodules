@@ -1,0 +1,3 @@
+[submodule "notes/preambles"]
+	path = notes/preambles
+	url = https://github.com/cmp0xff/TeX-preambles

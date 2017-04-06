@@ -1,0 +1,111 @@
+% This file was created with JabRef 2.10.
+% Encoding: UTF-8
+
+
+@Book{Dirac2001,
+  Title                    = {Lectures on quantum mechanics},
+  Author                   = {Dirac, Paul Adrien Maurice},
+  Publisher                = {Dover Publications},
+  Year                     = {2001},
+
+  Address                  = {31 East 2nd Street, Mineola, N.Y. 11501},
+
+  Abstract                 = {The author of this concise, brilliant series of lectures on mathematical methods in quantum mechanics was one of the shining intellects in the field, winning a Nobel prize in 1933 for his pioneering work in the quantum mechanics of the atom. Beyond that, he developed the transformation theory of quantum mechanics (which made it possible to calculate the statistical distribution of certain variables), was one of the major authors of the quantum theory of radiation, codiscovered the Fermi-Dirac statistics, and predicted the existence of the positron.
+The four lectures in this book were delivered at Yeshiva University, New York, in 1964. The first, "The Hamiltonian Method," is an introduction to visualizing quantum theory through the use of classical mechanics. The remaining lectures build on that idea. "The Problem of Quantization" shows how one can start with a classical field theory and end up with a quantum field theory. In "Quantization on Curved Surfaces," Dirac examines the possibility of building a relativistic quantum theory on curved surfaces. He deduces that it is not possible, but it should be possible on flat surfaces. In the final lecture, "Quantization on Flat Surfaces," he concludes that "we can set up the basic equations for a quantum theory of the Born-Infeld electrodynamics agreeing with special relativity, but [not] with general relativity." Physics and chemistry students will find this book an invaluable addition to their libraries, as will anyone intrigued by the far-reaching and influential ideas of quantum mechanics.
+
+Reprint of Volume 2 in the Belfer Graduate School of Science Monographs Series, Yeshiva University, New York, 1964 edition.},
+  ISBN                     = {9780486417134},
+  Owner                    = {yfwang},
+  Timestamp                = {2017.04.06},
+  Url                      = {http://store.doverpublications.com/0486417131.html}
+}
+
+@Book{Gitman1990,
+  Title                    = {Quantization of Fields with Constraints},
+  Author                   = {Gitman, Dmitriy M. and Tyutin, Igor V.},
+  Publisher                = {Springer Berlin Heidelberg},
+  Year                     = {1990},
+  Series                   = {Springer Series in Nuclear and Particle Physics},
+
+  __markedentry            = {[yfwang:]},
+  Doi                      = {10.1007/978-3-642-83938-2},
+  ISBN                     = {http://id.crossref.org/isbn/978-3-642-83938-2},
+  ISSN                     = {0939-1150},
+  Owner                    = {yfwang},
+  Related                  = {Гитман1986},
+  Relation                 = {translationof
+},
+  Timestamp                = {2017.04.06},
+  Url                      = {http://dx.doi.org/10.1007/978-3-642-83938-2}
+}
+
+@Book{,
+  Title                    = {Quantization of Gauge Systems},
+  Author                   = {Henneaux, Marc and Teitelboim, Claudio},
+  Publisher                = {Princeton University Press},
+  Year                     = {1994},
+
+  Abstract                 = {This book is a systematic study of the classical and quantum theories of gauge systems. It starts with Dirac's analysis showing that gauge theories are constrained Hamiltonian systems. The classical foundations of BRST theory are then laid out with a review of the necessary concepts from homological algebra. Reducible gauge systems are discussed, and the relationship between BRST cohomology and gauge invariance is carefully explained. The authors then proceed to the canonical quantization of gauge systems, first without ghosts (reduced phase space quantization, Dirac method) and second in the BRST context (quantum BRST cohomology). The path integral is discussed next. The analysis covers indefinite metric systems, operator insertions, and Ward identities. The antifield formalism is also studied and its equivalence with canonical methods is derived. The examples of electromagnetism and abelian 2-form gauge fields are treated in detail.
+
+The book gives a general and unified treatment of the subject in a self-contained manner. Exercises are provided at the end of each chapter, and pedagogical examples are covered in the text.},
+  ISBN                     = {9780691037691},
+  Owner                    = {yfwang},
+  Timestamp                = {2017.04.06},
+  Url                      = {http://press.princeton.edu/titles/5156.html}
+}
+
+@Book{Prokhorov2009,
+  Title                    = {Hamiltonian Mechanics of Gauge Systems},
+  Author                   = {Prokhorov, Lev V. and Shabanov, Sergei V.},
+  Publisher                = {Cambridge University Press},
+  Year                     = {2009},
+
+  __markedentry            = {[yfwang:6]},
+  Doi                      = {10.1017/cbo9780511976209},
+  ISBN                     = {http://id.crossref.org/isbn/9780511976209},
+  Owner                    = {yfwang},
+  Timestamp                = {2017.04.06},
+  Url                      = {http://dx.doi.org/10.1017/cbo9780511976209}
+}
+
+@Book{Rothe2010,
+  Title                    = {Classical and Quantum Dynamics of Constrained Hamiltonian Systems},
+  Author                   = {Rothe, Heinz J and Rothe, Klaus D},
+  Publisher                = {World Scientific},
+  Year                     = {2010},
+  Month                    = {Apr},
+  Series                   = {World Scientific Lecture Notes in Physics},
+  Doi                      = {10.1142/7689},
+  ISBN                     = {http://id.crossref.org/isbn/978-981-4299-65-7},
+  ISSN                     = {1793-1436},
+  Owner                    = {yfwang},
+  Timestamp                = {2017.04.06},
+  Url                      = {http://dx.doi.org/10.1142/7689}
+}
+
+@Book{Sundermeyer1982,
+  Title                    = {Constrained Dynamics},
+  Author                   = {Sundermeyer, Kurt},
+  Publisher                = {Springer-Verlag},
+  Year                     = {1982},
+  Series                   = {Lecture Notes in Physics},
+  Volume                   = {169},
+  Doi                      = {10.1007/bfb0036225},
+  ISBN                     = {http://id.crossref.org/isbn/3-540-11947-7},
+  Owner                    = {yfwang},
+  Timestamp                = {2017.04.06},
+  Url                      = {http://dx.doi.org/10.1007/bfb0036225}
+}
+
+@Book{Гитман1986,
+  Title                    = {Каноническое квантование полей со связями},
+  Author                   = {Гитман, Дмитрий Максимович and Тютин, Игорь Викторович},
+  Publisher                = {Наука},
+  Year                     = {1986},
+
+  Address                  = {030077 г. 11овосибирск-77, Станиславского, 25},
+
+  Owner                    = {yfwang},
+  Timestamp                = {2017.04.06}
+}
+
