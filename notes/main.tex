@@ -33,6 +33,41 @@
 
 \section{Hamiltonian formalism}
 
+\begin{equation}
+L^v = \fat{L}{\dot{q} = v}
+\end{equation}
+
+\begin{equation}
+S = \int\dd t\,\rbr{L^v + \sum_i p_i\rbr{\dot{q}_i-v_i}}
+\end{equation}
+
+\begin{equation}
+p_i = \frpa{L}{v_i}
+\end{equation}
+
+$v^a = \rfun{\ol{v}^a}{q,p}$ can be solved, $a = 1, 2, \ldots, R_W$; $v^\alpha$ 
+cannot be solved, $\alpha = R_W + 1, \ldots, n$.
+
+Example:
+\begin{equation}
+L^v = \frac{1}{2} \sum_{i,j}\rfun{W_{ij}}{q} v_i v_j + \sum_i \rfun{\eta_i}{q} 
+v_i - \rfun{V}{q}.
+\end{equation}
+
+\begin{equation}
+p_i = \frpa{L^v}{v_i} = \sum_{i,j} W_{ij} v_j + \eta_i.
+\end{equation}
+
+Let
+\begin{align}
+\sum_j W_{ij} e_j^{(a)} &= \lambda^{(a)} e_i \neq 0, \\
+\sum_j W_{ij} e_j^{(\alpha)} &= 0.
+\end{align}
+
+
+
+
+
 \section{Examples}
 
 \printbibliography
