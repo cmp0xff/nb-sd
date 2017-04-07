@@ -1,0 +1,135 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+
+
+\input{../preambles/preamble}
+\input{../preambles/unicode}
+
+\setmainlanguage{english}
+\setotherlanguages{german,greek,russian}
+
+\input{../preambles/math-single}
+\input{../preambles/math-brac}
+\input{../preambles/math-thm}
+\input{../preambles/phys-chem}
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\usepackage[style=authoryear-icomp,
+			backend=biber]{biblatex}
+\addbibresource{singular-dynamics.bib}
+
+\title{Notes on Canonical Singular Dynamics}
+\author{Yi-Fan Wang (王\ 一帆)}
+%\date{}
+
+\begin{document}
+\maketitle
+
+\section{Canonical formalism}
+
+Lagrangian with velocity
+\begin{equation}
+L^\text{v} \coloneqq \fat{L}{\dot{q} = v}
+\end{equation}
+Equations of motion
+\begin{equation}
+\sum_j M_{ij}\dot{v}_j = K^\text{v}_i,\quad
+\dot{q}_i = v_i.
+\end{equation}
+where
+\begin{equation}
+\rfun{M_{ij}}{q,v} \coloneqq \frpa{^2 L^\text{v}}{v_i\,\partial v_j}.
+\end{equation}
+
+Adding
+\begin{equation}
+p_i \coloneqq \frpa{L^\text{v}}{v_i} \eqqcolon \rfun{\ol{p}_i}{q,v}.
+\end{equation}
+Variation of
+\begin{equation}
+\sfun{S}{q, p, v} \coloneqq \int\dd t\,\sbr{L^\text{v} + \sum_i 
+p_i\rbr{\dot{q}_i - v_i}}.
+\end{equation}
+gives the \emph{extended Euler--Lagrange equations}
+\begin{equation}
+\dot{q}_i = v_i,\quad
+\dot{p}_i = \frpa{L^\text{v}}{q_i},\quad
+p_i = \frpa{L^\text{v}}{v_i}.
+\end{equation}
+
+Extended Hamiltonian
+\begin{equation}
+\rfun{H^\text{v}}{q, p, v} \coloneqq \sum_i p_i v_i - L^\text{v}.
+\end{equation}
+Identities
+\begin{equation}
+\frpa{H^\text{v}}{q_i} \equiv - \frpa{L^\text{v}}{q_i},\quad
+\frpa{H^\text{v}}{p_i} \equiv v_i,\quad
+\frpa{H^\text{v}}{v_i} \equiv p_i - \frpa{L^\text{v}}{v_i}.
+\end{equation}
+Variation of
+\begin{equation}
+\sfun{S}{q, p, v} \coloneqq \int\dd t\,\sbr{\sum_i 
+p_i \dot{q}_i H^\text{v} + }
+\end{equation}
+gives the \emph{extended canonical equations}
+\begin{equation}
+\dot{q}_i = \sbr{q_i, H^\text{v}}_\text{TP},\quad
+\dot{p}_i = \sbr{p_i, H^\text{v}}_\text{TP},\quad
+\frpa{H^\text{v}}{v_i} = 0,
+\end{equation}
+where the total Poison bracket is defined as
+\begin{equation}
+\sbr{f^\text{v}, g^\text{v}}_\text{TP} \coloneqq 
+\sum_i\rbr{\frpa{f^\text{v}}{q_i}\frpa{g^\text{v}}{p_i} -
+\frpa{f^\text{v}}{p_i}\frpa{g^\text{v}}{q_i}}.
+\end{equation}
+
+$v^a = \rfun{\ol{v}^a}{q,p}$ can be solved, $a = 1, 2, \ldots, r_M$; $v^\alpha$ 
+cannot be solved, $\alpha = r_M + 1, \ldots, n$, where $r_M = \rank M$.
+
+\emph{Primary constraints in the standard form}
+\begin{equation}
+\rfun{\phi_\alpha^{(0)}}{q, p} \coloneqq
+\fat{\frpa{H^\text{v}}{v_\alpha}}{\cbr{v_\alpha = \ol{v}_\alpha}} \equiv
+p_\alpha - \fat{\frpa{L^\text{v}}{v_\alpha}}{\cbr{v_\alpha = \ol{v}_\alpha}}.
+\end{equation}
+
+\emph{Total Hamiltonian}
+\begin{equation}
+H^\text{t} \coloneqq \fat{H^\text{v}}{\cbr{v_\alpha = \ol{v}_\alpha}}.
+\end{equation}
+
+
+
+
+
+
+
+
+
+\section{Examples}
+
+\begin{equation}
+L^\text{v} = \frac{1}{2} \sum_{i,j}\rfun{W_{ij}}{q} v_i v_j + \sum_i 
+\rfun{\eta_i}{q} 
+v_i - \rfun{V}{q}.
+\end{equation}
+
+\begin{equation}
+p_i = \frpa{L^\text{v}}{v_i} = \sum_{i,j} W_{ij} v_j + \eta_i.
+\end{equation}
+
+Let
+\begin{align}
+\sum_j W_{ij} e_j^{(a)} &= \lambda^{(a)} e_i \neq 0, \\
+\sum_j W_{ij} e_j^{(\alpha)} &= 0.
+\end{align}
+
+\printbibliography
+
+\end{document}
