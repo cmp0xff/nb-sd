@@ -51,7 +51,7 @@ p_i \coloneqq \frpa{L^\text{v}}{v_i} \eqqcolon \rfun{\ol{p}_i}{q,v}.
 \end{equation}
 Variation of
 \begin{equation}
-\sfun{S}{q, p, v} \coloneqq \int\dd t\,\sbr{L^\text{v} + \sum_i 
+\sfun{S}{q, p; v} \coloneqq \int\dd t\,\sbr{L^\text{v} + \sum_i 
 p_i\rbr{\dot{q}_i - v_i}}.
 \end{equation}
 gives the \emph{extended Euler--Lagrange equations}
@@ -63,7 +63,7 @@ p_i = \frpa{L^\text{v}}{v_i}.
 
 Extended Hamiltonian
 \begin{equation}
-\rfun{H^\text{v}}{q, p, v} \coloneqq \sum_i p_i v_i - L^\text{v}.
+\rfun{H^\text{v}}{q, p; v} \coloneqq \sum_i p_i v_i - L^\text{v}.
 \end{equation}
 Identities
 \begin{equation}
@@ -73,8 +73,8 @@ Identities
 \end{equation}
 Variation of
 \begin{equation}
-\sfun{S}{q, p, v} \coloneqq \int\dd t\,\sbr{\sum_i 
-p_i \dot{q}_i H^\text{v} + }
+\sfun{S}{q, p; v} \coloneqq \int\dd t\,\sbr{\sum_i 
+p_i \dot{q}_i - H^\text{v}}
 \end{equation}
 gives the \emph{extended canonical equations}
 \begin{equation}
@@ -89,24 +89,57 @@ where the total Poison bracket is defined as
 \frpa{f^\text{v}}{p_i}\frpa{g^\text{v}}{q_i}}.
 \end{equation}
 
-$v^a = \rfun{\ol{v}^a}{q,p}$ can be solved, $a = 1, 2, \ldots, r_M$; $v^\alpha$ 
+$v_a = \rfun{\ol{v}_a}{q,p}$ can be solved, $a = 1, 2, \ldots, r_M$; $v^\alpha$ 
 cannot be solved, $\alpha = r_M + 1, \ldots, n$, where $r_M = \rank M$.
+
+(need to show $v_a = \rfun{\ol{v}_a}{q,p_a}$)
 
 \emph{Primary constraints in the standard form}
 \begin{equation}
 \rfun{\phi_\alpha^{(0)}}{q, p} \coloneqq
 \fat{\frpa{H^\text{v}}{v_\alpha}}{\cbr{v_\alpha = \ol{v}_\alpha}} \equiv
-p_\alpha - \fat{\frpa{L^\text{v}}{v_\alpha}}{\cbr{v_\alpha = \ol{v}_\alpha}}.
+p_\alpha - \fat{\frpa{L^\text{v}}{v_\alpha}}{\cbr{v_a = \ol{v}_a}}.
 \end{equation}
 
 \emph{Total Hamiltonian}
 \begin{equation}
-H^\text{t} \coloneqq \fat{H^\text{v}}{\cbr{v_\alpha = \ol{v}_\alpha}}.
+H^\text{t} \coloneqq \fat{H^\text{v}}{\cbr{v_a = \ol{v}_a}} \equiv
+\rfun{H^\text{v}}{q, p; \cbr{\rfun{\ol{v}^a}{q, p_a}, v_\alpha}}.
 \end{equation}
 
+\emph{Subspace of primary constraints}
+\begin{equation}
+\Gamma_\text{P} = \cbr{ \rbr{q, p} | \rfun{\phi_\alpha^{0}}{q, p} = 0, \forall 
+\alpha}
+\end{equation}
 
+Since
+\begin{equation}
+\frpa{H^\text{t}}{v_\alpha} =
+\fat{\frpa{H^\text{v}}{v_\alpha}}{\cbr{v_a = \ol{v}_a}} = \phi_\alpha^{(0)}
+\equiv p_\alpha - \fat{\frpa{L^\text{v}}{v_\alpha}}{v_a = \ol{v}_a},
+\end{equation}
+$H^\text{t}$ is linear in $v_\alpha$. One writes
+\begin{equation}
+\rfun{H^\text{t}}{q, \cbr{p_a}; \cbr{p_\alpha}, \cbr{v_\alpha}} = \rfun{H}{q, 
+\cbr{p_a}} + \sum_\alpha v_\alpha \phi_\alpha^{(0)},
+\end{equation}
+where $H$ is the \emph{canonical Hamiltonian} or simply \emph{Hamiltonian}. 
 
+need to show $H$ is independent of $\cbr{p_\alpha}$.
 
+Canonical equations with primary constraints
+\begin{align}
+\dot{q}_a &= \sbr{q_a, H}_\text{TP} + \sum_\beta v_\beta 
+\sbr{q_a, \phi_\beta}_\text{TP}, \\
+\dot{p}_i &= \sbr{p_i, H}_\text{TP} + \sum_\beta v_\beta 
+\sbr{p_i, \phi_\beta}_\text{TP}, \\
+\rfun{\phi_\alpha^{(0)}}{q, p} &= 0,
+\end{align}
+where $v_\beta$'s are undetermined.
+
+Weak equality: $f \approx g$ iff $\fat{f}{\Gamma_\text{P}} = 
+\fat{g}{\Gamma_\text{P}}$.
 
 
 
@@ -114,21 +147,51 @@ H^\text{t} \coloneqq \fat{H^\text{v}}{\cbr{v_\alpha = \ol{v}_\alpha}}.
 
 \section{Examples}
 
-\begin{equation}
-L^\text{v} = \frac{1}{2} \sum_{i,j}\rfun{W_{ij}}{q} v_i v_j + \sum_i 
-\rfun{\eta_i}{q} 
-v_i - \rfun{V}{q}.
-\end{equation}
+%\begin{equation}
+%L^\text{v} = \frac{1}{2} \sum_{i,j}\rfun{W_{ij}}{q} v_i v_j + \sum_i 
+%\rfun{\eta_i}{q} 
+%v_i - \rfun{V}{q}.
+%\end{equation}
 
-\begin{equation}
-p_i = \frpa{L^\text{v}}{v_i} = \sum_{i,j} W_{ij} v_j + \eta_i.
-\end{equation}
+%\begin{equation}
+%p_i = \frpa{L^\text{v}}{v_i} = \sum_{i,j} W_{ij} v_j + \eta_i.
+%\end{equation}
 
-Let
-\begin{align}
-\sum_j W_{ij} e_j^{(a)} &= \lambda^{(a)} e_i \neq 0, \\
-\sum_j W_{ij} e_j^{(\alpha)} &= 0.
-\end{align}
+%Let
+%\begin{align}
+%\sum_j W_{ij} e_j^{(a)} &= \lambda^{(a)} e_i \neq 0, \\
+%\sum_j W_{ij} e_j^{(\alpha)} &= 0.
+%\end{align}
+
+\subsection{Toy systems}
+
+\subsection{Parametrised systems}
+
+\subsubsection{Non-relativistic point particle}
+
+\subsubsection{Relativistic charged point particle}
+
+\subsubsection{Neutral scalar field}
+
+\subsection{Proca action}
+
+\subsection{Dirac field}
+
+\subsection{Gauge theories}
+
+\subsubsection{Electrodynamics}
+
+\subsubsection{Spinor electrodynamics}
+
+\subsubsection{Yang--Mills theory}
+
+\subsubsection{Yang--Mills--Higgs theory}
+
+\subsection{Gravitation theories}
+
+\subsubsection{Einstein--Hilbert action}
+
+
 
 \printbibliography
 
