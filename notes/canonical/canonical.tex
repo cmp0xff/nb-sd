@@ -20,7 +20,7 @@
 
 \usepackage[style=authoryear-icomp,
 			backend=biber]{biblatex}
-\addbibresource{singular-dynamics.bib}
+\addbibresource{../singular-dynamics.bib}
 
 \title{Notes on Canonical Singular Dynamics}
 \author{Yi-Fan Wang (王\ 一帆)}
@@ -193,6 +193,13 @@ $\forall H_1 \approx H$,
 
 \subsection{Toy examples}
 
+\subsubsection*{Example 0}
+\cite[sec.\ 1.2]{Gitman1990}
+\begin{equation}
+L = \frac{1}{2}\rbr{\dot{x}-y}^2
+\end{equation}
+
+
 \subsubsection*{Example 1}
 \begin{equation}
 L = \frac{1}{2} \dot{x}^2 + \dot{x} y - \frac{1}{2}\rbr{x-y}^2.
@@ -249,34 +256,87 @@ q_2}^2.
 
 \subsection{Parametrised systems}
 
-\subsubsection{Non-relativistic point particle}
+\subsubsection*{Non-relativistic point particle}
 
-\subsubsection{Relativistic charged point particle}
+\subsubsection*{Relativistic charged point particle}
 
-\subsubsection{Neutral scalar field}
-
-\subsection{Proca action}
-
-\subsection{Dirac field}
-
-\subsection{Gauge theories}
-
-\subsubsection{Maxwell theory}
+\cite[sec.\ 15]{Landau1975}
 \begin{equation}
-\Ld = -\frac{1}{4} F_\text{\mu\nu} F^{\mu\nu} + \frac{1}{2} F_{\mu\nu} 
-\eta^{\mu\nu} + A_\mu J^\mu_\text{f}.
+S \coloneqq \int -m\,\dd s + q A_\mu \,\dd x^\mu \eqqcolon \int\dd t\, L,\\
+\label{eq:point-charged}
+\end{equation}
+where the Lagrangian reads
+\begin{equation}
+L = -m \sqrt{-\dot{x}^\mu \dot{x}_\mu} + q \dot{x}^\mu A_\mu.
+\end{equation}
+
+\cite[sec.\ 2.1]{Blumenhagen2013}
+\begin{equation}
+L \coloneqq \frac{1}{2} \rbr{e^{-1}\dot{x}^\mu \dot{x}_\mu - m^2 e}
+\label{eq:point-aux-lagrangian}
+\end{equation}
+
+%\subsubsection{Neutral scalar field}
+
+\subsection{Maxwell--Proca theory}
+
+\begin{equation}
+\Ld = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu} - \frac{1}{2}m^2 A_\mu A^\mu + 
+\frac{1}{2} F_{\mu\nu} S^{\mu\nu} + A_\mu J^\mu_\text{f},
+\end{equation}
+where $m > 0$ corresponds to the Proca theory \cite[sec.\ 2.3]{Gitman1990}, and 
+$m = 0$ the Maxwell theory \cite[sec.\ 3.3.3]{Rothe2010} \cite[sec.\ 
+2.4]{Gitman1990}.
+
+%\subsection{Dirac field}
+
+%\subsection{Gauge theories}
+
+%\subsubsection{Spinor electrodynamics}
+
+%\subsubsection{Yang--Mills theory}
+
+%\subsubsection{Yang--Mills--Higgs theory}
+
+\subsection{String theories}
+
+\subsubsection*{Nambu--Gotō action}
+
+Generalising the kinetic part of \eqref{eq:point-charged}, one has
+\begin{equation}
+S_\text{NG} \coloneqq -T \int_\Sigma \dd A
+\eqqcolon -T \int_\Sigma\dd^2\sigma \Ld,
+\end{equation}
+where the Lagrangian density
+\begin{equation}
+\Ld = \sqrt{-\Gamma},\quad
+\Gamma \coloneqq \det \Gamma_{\alpha\beta},\quad
+\Gamma_{\alpha\beta} \coloneqq \frpa{X^\nu}{\sigma^\alpha} 
+\frpa{X_\nu}{\sigma^\alpha}.
 \end{equation}
 
 
-\subsubsection{Spinor electrodynamics}
+Historically \cite{Goto1971,Nambu1970}; Reference e.g.\ 
+\cite{Blumenhagen2013,Kiefer2012}
 
-\subsubsection{Yang--Mills theory}
+\subsubsection*{Polyakov action}
 
-\subsubsection{Yang--Mills--Higgs theory}
+Generalising \eqref{eq:point-aux-lagrangian}
+\begin{equation}
+\sfun{S_\text{P}}{X^\mu, h{\alpha\beta}} = -\frac{T}{2}\int_\Sigma \Ld,
+\end{equation}
+where
+\begin{equation}
+\Ld \coloneqq \sqrt{-h} h^{\alpha\beta}\Gamma_{\alpha\beta}.
+\end{equation}
 
-\subsection{Gravitation theories}
 
-\subsubsection{Einstein--Hilbert action}
+
+Historically \cite{Brink1976,Deser1976,Polyakov1981}
+
+%\subsection{Gravitation theories}
+
+%\subsubsection{Einstein--Hilbert action}
 
 
 
