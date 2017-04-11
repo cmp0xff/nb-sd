@@ -82,21 +82,22 @@ gives the \emph{extended canonical equations}
 \dot{p}_i = \sbr{p_i, H^\text{v}}_\text{P},\quad
 \frpa{H^\text{v}}{v_i} = 0,
 \end{equation}
-where the Poison bracket is defined as
+where the \emph{Poisson bracket} is defined as
 \begin{equation}
 \sbr{f^\text{v}, g^\text{v}}_\text{P} \coloneqq 
 \sum_i\rbr{\frpa{f^\text{v}}{q_i}\frpa{g^\text{v}}{p_i} -
 \frpa{f^\text{v}}{p_i}\frpa{g^\text{v}}{q_i}}.
 \end{equation}
 
-$v_a = \rfun{\ol{v}_a}{q,p}$ can be solved, $a = 1, 2, \ldots, r_M$; $v^\alpha$ 
+$v_a = \rfun{\ol{v}_a}{q,p;\cbr{v_\alpha}}$ can be solved, $a = 1, 2, \ldots, 
+r_M$; $v_\alpha$ 
 cannot be solved, $\alpha = r_M + 1, \ldots, n$, where $r_M = \rank M$.
 
 (need to show $v_a = \rfun{\ol{v}_a}{q,p_a}$)
 
 \emph{Primary constraints in the standard form}
 \begin{equation}
-\rfun{\phi_\alpha^{(0)}}{q, p} \coloneqq
+\rfun{\Phi_\alpha}{q, p} \coloneqq
 \fat{\frpa{H^\text{v}}{v_\alpha}}{\cbr{v_\alpha = \ol{v}_\alpha}} \equiv
 p_\alpha - \rfun{\ol{p}_\alpha}{q, \cbr{p_a}},
 \end{equation}
@@ -110,30 +111,31 @@ where
 \emph{Total Hamiltonian}
 \begin{equation}
 H^\text{t} \coloneqq \fat{H^\text{v}}{\cbr{v_a = \ol{v}_a}} \equiv
-\rfun{H^\text{v}}{q, p; \cbr{\rfun{\ol{v}^a}{q, p_a}, v_\alpha}}.
+\rfun{H^\text{v}}{q, p; \cbr{\rfun{\ol{v}^a}{q, p_a; \cbr{v_\alpha}}, 
+v_\alpha}}.
 \end{equation}
 
 \emph{Subspace of primary constraints}
 \begin{equation}
-\Gamma_\text{P} = \cbr{ \rbr{q, p}\, |\, \rfun{\phi_\alpha^{0}}{q, p} = 0, 
+\Gamma_\text{P} = \cbr{ \rbr{q, p}\, |\, \rfun{\Phi_\alpha}{q, p} = 0, 
 \forall \alpha}
 \end{equation}
 
 Since
 \begin{equation}
 \frpa{H^\text{t}}{v_\alpha} =
-\fat{\frpa{H^\text{v}}{v_\alpha}}{\cbr{v_a = \ol{v}_a}} = \phi_\alpha^{(0)}
+\fat{\frpa{H^\text{v}}{v_\alpha}}{\cbr{v_a = \ol{v}_a}} = \Phi_\alpha
 \equiv p_\alpha - \rfun{\ol{p}_\alpha}{q, \cbr{p_a}},
 \end{equation}
 $H^\text{t}$ is linear in $v_\alpha$. One writes
 \begin{equation}
 \rfun{H^\text{t}}{q, \cbr{p_a}; \cbr{p_\alpha}, \cbr{v_\alpha}} = \rfun{H}{q, 
-\cbr{p_a}} + \sum_\alpha v_\alpha \phi_\alpha^{(0)},
+\cbr{p_a}} + \sum_\alpha v_\alpha \Phi_\alpha,
 \end{equation}
-where $H$ is the \emph{canonical Hamiltonian} or simply \emph{Hamiltonian}. 
+where $H$ is the \emph{canonical Hamiltonian} or simply \emph{Hamiltonian}.
 
 \paragraph{Proposition}
-show $H$ is independent of $\cbr{p_\alpha}$.
+$H$ is independent of $\cbr{p_\alpha}$.
 
 \paragraph{Proposition}
 Canonical equations with primary constraints
@@ -143,7 +145,7 @@ Canonical equations with primary constraints
 \label{eq:q-i-primary}\\
 \dot{p}_i &= \sbr{p_i, H}_\text{P} + \sum_\beta v_\beta 
 \sbr{p_i, \phi_\beta}_\text{P}, \\
-\rfun{\phi_\alpha^{(0)}}{q, p} &= 0,
+\rfun{\Phi_\alpha}{q, p} &= 0,
 \end{align}
 where $v_\beta$'s are undetermined. Note that \cref{eq:q-i-primary} for $i = 
 \alpha$ holds identically: $\dot{q}_\alpha = \dot{q}_\alpha$.
@@ -167,9 +169,8 @@ $\forall H_1 \approx H$,
 \dot{p}_i \approx \sbr{p_i, H}_\text{P}.
 \end{equation}
 
-
-
-
+Primary and second constraints $\phi^{(1,)}_\mu$, $\phi^{(2,)}_\omega$; first 
+and second class constraints $\phi^{(,1)}_u$, $\phi^{(,2)}_w$.
 
 
 
@@ -262,13 +263,29 @@ q_2}^2.
 
 \cite[sec.\ 15]{Landau1975}
 \begin{equation}
-S \coloneqq \int -m\,\dd s + q A_\mu \,\dd x^\mu \eqqcolon \int\dd t\, L,\\
+S \coloneqq \int -m\,\dd s + e \rfun{A_\mu}{x} \,\dd x^\mu \eqqcolon \int\dd 
+t\, L,\\
 \label{eq:point-charged}
 \end{equation}
 where the Lagrangian reads
 \begin{equation}
-L = -m \sqrt{-\dot{x}^\mu \dot{x}_\mu} + q \dot{x}^\mu A_\mu.
+L = -m \sqrt{-\eta_{\mu\nu} \dot{x}^\mu \dot{x}^\nu } + e \dot{x}^\mu 
+\rfun{A_\mu}{x}.
 \end{equation}
+
+\begin{align}
+M_{\mu\nu} &\coloneqq \frpa{^2 L^\text{v}}{v^\mu\,\partial v^\nu} \nonumber \\
+&= \frac{m}{\rbr{-\eta_{\mu\nu} \dot{x}^\mu \dot{x}^\nu}^{3/2}} \cdot
+%\begin{cases}
+%\delta_{ij} v^i v^j & \mu = \nu = 0 \\
+%-\eta_{\alpha\beta} v^\alpha v^\beta + \rbr{v^\mu}^2 & \mu = \nu \neq 0 \\
+%-v^\mu v^\nu & \mu \neq \nu, \mu = 0 \lor \nu = 0 \\
+%v^\mu v^\nu & \mu \neq \nu, \mu \neq 0 \land \nu \neq 0
+%\end{cases}
+
+\end{align}
+
+
 
 \cite[sec.\ 2.1]{Blumenhagen2013}
 \begin{equation}
