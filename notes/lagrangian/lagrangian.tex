@@ -318,6 +318,81 @@ the system has a symmetry
 \delta x^\mu = \dot{x}^\mu \delta \lambda.
 \end{equation}
 
+\subsubsection*{Relativistic point particle with auxiliary coordinate}
+
+\cite[sec.\ 2.1]{Blumenhagen2013}
+\begin{equation}
+L \coloneqq \frac{1}{2} \rbr{e^{-1}\eta_{\mu\nu}\dot{x}^\mu \dot{x}^\nu - m^2 e}
+\label{eq:point-aux-lagrangian}
+\end{equation}
+
+Euler--Lagrange derivatives
+\begin{align}
+E_\mu &\coloneqq \rbr{\frpa{}{x^\mu}-\frde{}{\tau}\frpa{}{\dot{x}^\mu}}L 
+= e^{-1}\eta_{\mu\nu} \rbr{\frac{\dot{e}}{e}\dot{x}^\nu - \ddot{x}^\nu}, \\
+E_e &\coloneqq \rbr{\frpa{}{e}-\frde{}{\tau}\frpa{}{\dot{e}}}L
+= -\frac{1}{2}\rbr{\frac{1}{e^2}\eta_{\mu\nu}\dot{x}^\mu\dot{x}^\nu + m^2},
+\end{align}
+and collectively $E^{(0)} = \begin{pmatrix} E_\mu & E_e 
+\end{pmatrix}^\intercal$.
+
+\begin{equation}
+M^{(0)} \coloneqq M =
+\begin{pmatrix}
+e^{-1}\eta_{\mu\nu} & 0^\mu \\
+0^\nu & 0
+\end{pmatrix},
+\end{equation}
+so that the system is singular, with $w^{(0)} = \rbr{0^\mu; 1}$.
+
+One can choose $u^{(0)} = \rbr{0^\mu; e^2}$, so that
+\begin{align}
+\phi^{(0)} &\coloneqq u^{(0)}\cdot E^{(0)} = e^2 E_e \\
+&= -\frac{1}{2}\rbr{\eta_{\mu\nu}\dot{x}^\mu\dot{x}^\nu + m^2 e^2},
+\end{align}
+and thus
+\begin{align}
+E^{(1)}_1 &\coloneqq \dot{\phi}^{(0)} = e\rbr{2\dot{e} E_e + e\dot{E}_e} \\
+&= - m^2 e\dot{e}-\eta_{\mu\nu}\dot{x}^\mu\ddot{x}^\nu.
+\end{align}
+Collectively, $E^{(1)} = \begin{pmatrix} \rbr{E^{(0)}}^\intercal & E^{(1)}_1
+\end{pmatrix}^\intercal$.
+
+Straightforwardly,
+\begin{equation}
+M^{(1)} =
+\begin{pmatrix}
+e^{-1}\eta_{\mu\nu} & 0^\mu \\
+0^\nu & 0 \\
+\eta_{\mu\nu}\dot{x}^\mu & 0
+\end{pmatrix},
+
+\end{equation}
+and the new zero eigenvector $w^{(1)} = \rbr{e\dot{x}^\mu; 0, -1}$.
+
+One finds that
+\begin{align}
+w^{(1)} \cdot E^{(1)} &= e\dot{x}^\mu E_\mu - E^{(1)}_1 =
+e\rbr{\dot{x}^\mu E_\mu - 2 \dot{e} E_e - e\dot{E}_e} \\
+&= \eta_{\mu\nu} \frac{\dot{e}}{e} \dot{x}^\mu \dot{x}^\nu  + m^2 e \dot{e}
+= -2e \dot{e} E_e,
+\end{align}
+so that a gauge identity
+\begin{equation}
+G \coloneqq \dot{x}^\mu E_\mu - e \dot{E}_e \equiv 0
+\end{equation}
+is obtained.
+
+\begin{equation}
+G\epsilon = E_\mu \dot{x}^\mu \epsilon + E_e \rbr{\dot{e} \epsilon + e 
+\dot{\epsilon}} - \frde{}{\tau}\rbr{e E_e \epsilon},
+\end{equation}
+so that
+\begin{align}
+\delta x^\mu &= \dot{x}^\mu \epsilon, \\
+\delta e &= \dot{e} \epsilon + e \dot{\epsilon}.
+\end{align}
+
 
 
 
@@ -347,14 +422,6 @@ $m = 0$ the Maxwell theory \cite[sec.\ 3.3.3]{Rothe2010} \cite[sec.\
 %\subsubsection{Yang--Mills--Higgs theory}
 
 \subsection{String theories}
-
-\subsubsection*{Relativistic point particle with auxiliary coordinate}
-
-\cite[sec.\ 2.1]{Blumenhagen2013}
-\begin{equation}
-L \coloneqq \frac{1}{2} \rbr{e^{-1}\eta_{\mu\nu}\dot{x}^\mu \dot{x}^\nu - m^2 e}
-\label{eq:point-aux-lagrangian}
-\end{equation}
 
 \subsubsection*{Nambu--Gotō action}
 
