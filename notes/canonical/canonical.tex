@@ -259,41 +259,76 @@ q_2}^2.
 
 \subsubsection*{Non-relativistic point particle}
 
+\cite[sec.\ 3.1.1]{Kiefer2012}
+\begin{equation}
+\sfun{S}{\rfun{q}{t}} \coloneqq \int_{t_1}^{t_2}\dd t\,\rfun{L}{q, \frde{q}{t}}
+\end{equation}
+
+
+
 \subsubsection*{Relativistic charged point particle}
 
-\cite[sec.\ 15]{Landau1975}
+\cite[sec.\ 15]{Landau1975},
+\cite[sec.\ 3.1.2]{Kiefer2012}
 \begin{equation}
 S \coloneqq \int -m\,\dd s + e \rfun{A_\mu}{x} \,\dd x^\mu \eqqcolon \int\dd 
-t\, L,\\
-\label{eq:point-charged}
+\tau\, L,\\
+\label{eq:point-charged-action}
 \end{equation}
 where the Lagrangian reads
 \begin{equation}
-L = -m \sqrt{-\eta_{\mu\nu} \dot{x}^\mu \dot{x}^\nu } + e \dot{x}^\mu 
+L = -m \sqrt{-\eta_{\mu\nu} \dot{x}^\mu \dot{x}^\nu } + q \dot{x}^\mu 
 \rfun{A_\mu}{x}.
 \end{equation}
 
-\begin{align}
-M_{\mu\nu} &\coloneqq \frpa{^2 L^\text{v}}{v^\mu\,\partial v^\nu} \nonumber \\
-&= \frac{m}{\rbr{-\eta_{\mu\nu} \dot{x}^\mu \dot{x}^\nu}^{3/2}} \cdot
-%\begin{cases}
-%\delta_{ij} v^i v^j & \mu = \nu = 0 \\
-%-\eta_{\alpha\beta} v^\alpha v^\beta + \rbr{v^\mu}^2 & \mu = \nu \neq 0 \\
-%-v^\mu v^\nu & \mu \neq \nu, \mu = 0 \lor \nu = 0 \\
-%v^\mu v^\nu & \mu \neq \nu, \mu \neq 0 \land \nu \neq 0
-%\end{cases}
-
-\end{align}
-
-
-
-\cite[sec.\ 2.1]{Blumenhagen2013}
 \begin{equation}
-L \coloneqq \frac{1}{2} \rbr{e^{-1}\dot{x}^\mu \dot{x}_\mu - m^2 e}
-\label{eq:point-aux-lagrangian}
+M_{\mu\nu} \coloneqq \frpa{^2 L^\text{v}}{v^\mu\,\partial v^\nu} = 
+m\frac{-\eta_{\mu\nu}\eta_{\alpha\beta} + \eta_{\mu\alpha}\eta_{\nu\beta}}% 
+{\rbr{-\eta_{\rho\sigma}v^\rho v^\sigma}^{3/2}} v^\alpha v^\beta,
+\end{equation}
+which has one and only one eigenvector with null eigenvalue
+\begin{equation}
+v^\mu M_{\mu\nu} = 0.
 \end{equation}
 
-%\subsubsection{Neutral scalar field}
+Momenta
+\begin{equation}
+p_\mu = \frpa{L^\text{v}}{v^\mu} = 
+\frac{m\eta_{\mu\nu}v^\nu}{\sqrt{-\eta_{\rho\sigma}v^\rho v^\sigma}} + q A_\mu.
+\label{eq:point-charged-pvrel}
+\end{equation}
+If one chooses $v^0$ to be the primary inexpressible velocity, then eliminating
+$p_0$ in \cref{eq:point-charged-pvrel} yields
+\begin{equation}
+v^i = \frac{\xi \eta^{ij} \rbr{p_j - q A_j} v^0}{\sqrt{m^2 + \eta^{kl}
+\rbr{p_k - q A_k}\rbr{p_l - q A_l}}},
+\label{eq:point-charged-pvrel0}
+\end{equation}
+where $\xi = \sgn v^0$. In the following $\xi = +1$ will be chosen.
+
+Inserting \cref{eq:point-charged-pvrel0} into the extended Hamiltonian
+\begin{equation}
+H^\text{v} = v^\mu p_\mu - L^\text{v} = m\sqrt{-\eta_{\mu\nu}v^\mu v^\nu} + 
+v^\mu\rbr{p_\mu - q \rfun{A_\mu}{x}},
+\end{equation}
+one obtains the total Hamiltonian
+\begin{equation}
+H^\text{t} = v^0 \rbr{p_0 - q A_0 + \sqrt{m^2 + \eta^{kl}
+\rbr{p_k - q A_k}\rbr{p_l - q A_l}}},
+\end{equation}
+where only a primary constraint survives, which is obviously a first-class 
+constraint
+\begin{equation}
+\phi^{(1,1)} = p_0 - q A_0 + \sqrt{m^2 + \eta^{kl}
+\rbr{p_k - q A_k}\rbr{p_l - q A_l}},
+\end{equation}
+and the canonical Hamiltonian vanishes
+\begin{equation}
+H = 0.
+\end{equation}
+
+\subsubsection{Neutral scalar field}
+\cite[sec.\ 3.3]{Kiefer2012}
 
 \subsection{Maxwell--Proca theory}
 
@@ -317,9 +352,17 @@ $m = 0$ the Maxwell theory \cite[sec.\ 3.3.3]{Rothe2010} \cite[sec.\
 
 \subsection{String theories}
 
+\subsubsection*{Relativistic point particle with auxiliary coordinate}
+
+\cite[sec.\ 2.1]{Blumenhagen2013}
+\begin{equation}
+L \coloneqq \frac{1}{2} \rbr{e^{-1}\eta_{\mu\nu}\dot{x}^\mu \dot{x}^\nu - m^2 e}
+\label{eq:point-aux-lagrangian}
+\end{equation}
+
 \subsubsection*{Nambu--Gotō action}
 
-Generalising the kinetic part of \eqref{eq:point-charged}, one has
+Generalising the kinetic part of \eqref{eq:point-charged-action}, one has
 \begin{equation}
 S_\text{NG} \coloneqq -T \int_\Sigma \dd A
 \eqqcolon -T \int_\Sigma\dd^2\sigma \Ld,
@@ -334,7 +377,8 @@ where the Lagrangian density
 
 
 Historically \cite{Goto1971,Nambu1970}; Reference e.g.\ 
-\cite{Blumenhagen2013,Kiefer2012}
+\cite{Blumenhagen2013}
+\cite[sec.\ 3.2]{Kiefer2012}
 
 \subsubsection*{Polyakov action}
 
@@ -349,7 +393,9 @@ where
 
 
 
-Historically \cite{Brink1976,Deser1976,Polyakov1981}
+Historically \cite{Brink1976,Deser1976,Polyakov1981};
+Reference
+\cite[sec.\ 3.2]{Kiefer2012}
 
 %\subsection{Gravitation theories}
 
