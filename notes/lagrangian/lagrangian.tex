@@ -29,7 +29,7 @@
 \begin{document}
 \maketitle
 
-\section{Lagrangian formalism}
+\section{Classical formalism}
 
 Lagrangian with velocity
 \begin{equation}
@@ -268,7 +268,7 @@ q_2}^2.
 
 \subsubsection*{Relativistic charged point particle}
 
-\cite[sec.\ 15]{Landau1975},
+\cite[sec.\ 16]{Landau1975},
 \cite[sec.\ 3.1.2]{Kiefer2012}
 \begin{equation}
 S \coloneqq \int -m\,\dd s + e \rfun{A_\mu}{x} \,\dd x^\mu \eqqcolon \int\dd 
@@ -282,15 +282,46 @@ L = -m \sqrt{-\eta_{\mu\nu} \dot{x}^\mu \dot{x}^\nu } + q \dot{x}^\mu
 \end{equation}
 
 \begin{equation}
-M_{\mu\nu} \coloneqq \frpa{^2 L^\text{v}}{\dot{x}^\mu\,\partial \dot{x}^\nu} = 
+M_{\mu\nu} \coloneqq \frpa{^2 L}{\dot{x}^\mu\,\partial \dot{x}^\nu} = 
 m\frac{-\eta_{\mu\nu}\eta_{\alpha\beta} + \eta_{\mu\alpha}\eta_{\nu\beta}}% 
 {\rbr{-\eta_{\rho\sigma}\dot{x}^\rho \dot{x}^\sigma}^{3/2}} \dot{x}^\alpha 
 \dot{x}^\beta,
 \end{equation}
-which has one and only one eigenvector with null eigenvalue
+which has one and only one zero eigenvector
 \begin{equation}
 \dot{x}^\mu M_{\mu\nu} = 0.
 \end{equation}
+
+Euler--Lagrange derivatives
+\begin{equation}
+E_\mu = \rbr{\frpa{}{x^\mu}-\frde{}{\tau}\frpa{}{\dot{x}^\mu}} L
+\equiv K_\mu - M_{\mu\nu}\ddot{x}^\nu,
+\label{eq:point-charged-eld}
+\end{equation}
+where
+\begin{equation}
+K_\mu \coloneqq -q F_{\mu\nu} \dot{x}^\nu,
+\end{equation}
+and
+\begin{equation}
+F_{\mu\nu} \coloneqq \partial_\mu A_\nu - \partial_\nu A_\mu.
+\end{equation}
+
+Contracting the zero eigenvector with \cref{eq:point-charged-eld} yields
+\begin{equation}
+\dot{x}^\mu E_\mu = \dot{x}^\mu K_\mu - \dot{x}^\mu M_{\mu\nu} \ddot{x}^\nu
+\equiv 0,
+\end{equation}
+so that it generates a gauge identity, and no further constraint exists. Thus 
+the system has a symmetry
+\begin{equation}
+\delta x^\mu = \dot{x}^\mu \delta \lambda.
+\end{equation}
+
+
+
+
+
 
 \subsubsection{Neutral scalar field}
 \cite[sec.\ 3.3]{Kiefer2012}
@@ -341,7 +372,7 @@ where the Lagrangian density
 \end{equation}
 
 
-Historically \cite{Goto1971,Nambu1970}; Reference e.g.\ 
+Historically \cite{Nambu1970,Goto1971}; Reference e.g.\ 
 \cite{Blumenhagen2013}
 \cite[sec.\ 3.2]{Kiefer2012}
 
