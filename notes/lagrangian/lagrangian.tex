@@ -1,0 +1,373 @@
+\documentclass[a4paper,11pt]{article}
+%\documentclass[a4paper,11pt]{scrartcl}
+
+
+
+\input{../preambles/preamble}
+\input{../preambles/unicode}
+
+\setmainlanguage{english}
+\setotherlanguages{german,greek,russian}
+
+\input{../preambles/math-single}
+\input{../preambles/math-brac}
+\input{../preambles/math-thm}
+\input{../preambles/phys-chem}
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\usepackage[style=authoryear-icomp,
+			backend=biber]{biblatex}
+\addbibresource{../singular-dynamics.bib}
+
+\title{Notes on Lagrangian Singular Dynamics}
+\author{Yi-Fan Wang (王\ 一帆)}
+%\date{}
+
+\begin{document}
+\maketitle
+
+\section{Lagrangian formalism}
+
+Lagrangian with velocity
+\begin{equation}
+L^\text{v} \coloneqq \fat{L}{\dot{q} = v}
+\end{equation}
+Equations of motion
+\begin{equation}
+\sum_j M_{ij}\dot{v}_j = K^\text{v}_i,\quad
+\dot{q}_i = v_i.
+\end{equation}
+where
+\begin{equation}
+\rfun{M_{ij}}{q,v} \coloneqq \frpa{^2 L}{v_i\,\partial v_j}.
+\end{equation}
+
+% Adding
+% \begin{equation}
+% p_i \coloneqq \frpa{L^\text{v}}{v_i}.% \eqqcolon \rfun{\ol{p}_i}{q,v}.
+% \end{equation}
+% Variation of
+% \begin{equation}
+% \sfun{S}{q, p; v} \coloneqq \int\dd t\,\sbr{L^\text{v} + \sum_i 
+% p_i\rbr{\dot{q}_i - v_i}}.
+% \end{equation}
+% gives the \emph{extended Euler--Lagrange equations}
+% \begin{equation}
+% \dot{q}_i = v_i,\quad
+% \dot{p}_i = \frpa{L^\text{v}}{q_i},\quad
+% p_i = \frpa{L^\text{v}}{v_i}.
+% \end{equation}
+% 
+% Extended Hamiltonian
+% \begin{equation}
+% \rfun{H^\text{v}}{q, p; v} \coloneqq \sum_i p_i v_i - L^\text{v}.
+% \end{equation}
+% Identities
+% \begin{equation}
+% \frpa{H^\text{v}}{q_i} \equiv - \frpa{L^\text{v}}{q_i},\quad
+% \frpa{H^\text{v}}{p_i} \equiv v_i,\quad
+% \frpa{H^\text{v}}{v_i} \equiv p_i - \frpa{L^\text{v}}{v_i}.
+% \end{equation}
+% Variation of
+% \begin{equation}
+% \sfun{S}{q, p; v} \coloneqq \int\dd t\,\sbr{\sum_i 
+% p_i \dot{q}_i - H^\text{v}}
+% \end{equation}
+% gives the \emph{extended canonical equations}
+% \begin{equation}
+% \dot{q}_i = \sbr{q_i, H^\text{v}}_\text{P},\quad
+% \dot{p}_i = \sbr{p_i, H^\text{v}}_\text{P},\quad
+% \frpa{H^\text{v}}{v_i} = 0,
+% \end{equation}
+% where the \emph{Poisson bracket} is defined as
+% \begin{equation}
+% \sbr{f^\text{v}, g^\text{v}}_\text{P} \coloneqq 
+% \sum_i\rbr{\frpa{f^\text{v}}{q_i}\frpa{g^\text{v}}{p_i} -
+% \frpa{f^\text{v}}{p_i}\frpa{g^\text{v}}{q_i}}.
+% \end{equation}
+% 
+% $v_a = \rfun{\ol{v}_a}{q,p;\cbr{v_\alpha}}$ can be solved, $a = 1, 2, \ldots, 
+% r_M$; $v_\alpha$ 
+% cannot be solved, $\alpha = r_M + 1, \ldots, n$, where $r_M = \rank M$.
+% 
+% (need to show $v_a = \rfun{\ol{v}_a}{q,p_a}$)
+% 
+% \emph{Primary constraints in the standard form}
+% \begin{equation}
+% \rfun{\Phi_\alpha}{q, p} \coloneqq
+% \fat{\frpa{H^\text{v}}{v_\alpha}}{\cbr{v_\alpha = \ol{v}_\alpha}} \equiv
+% p_\alpha - \rfun{\ol{p}_\alpha}{q, \cbr{p_a}},
+% \end{equation}
+% where
+% \begin{equation}
+% \rfun{\ol{p}_\alpha}{q, \cbr{p_a}} 
+% \coloneqq \fat{\frpa{L^\text{v}}{v_\alpha}}{\cbr{v_a = \ol{v}_a}}.
+% \end{equation}
+% 
+% 
+% \emph{Total Hamiltonian}
+% \begin{equation}
+% H^\text{t} \coloneqq \fat{H^\text{v}}{\cbr{v_a = \ol{v}_a}} \equiv
+% \rfun{H^\text{v}}{q, p; \cbr{\rfun{\ol{v}^a}{q, p_a; \cbr{v_\alpha}}, 
+% v_\alpha}}.
+% \end{equation}
+% 
+% \emph{Subspace of primary constraints}
+% \begin{equation}
+% \Gamma_\text{P} = \cbr{ \rbr{q, p}\, |\, \rfun{\Phi_\alpha}{q, p} = 0, 
+% \forall \alpha}
+% \end{equation}
+% 
+% Since
+% \begin{equation}
+% \frpa{H^\text{t}}{v_\alpha} =
+% \fat{\frpa{H^\text{v}}{v_\alpha}}{\cbr{v_a = \ol{v}_a}} = \Phi_\alpha
+% \equiv p_\alpha - \rfun{\ol{p}_\alpha}{q, \cbr{p_a}},
+% \end{equation}
+% $H^\text{t}$ is linear in $v_\alpha$. One writes
+% \begin{equation}
+% \rfun{H^\text{t}}{q, \cbr{p_a}; \cbr{p_\alpha}, \cbr{v_\alpha}} = \rfun{H}{q, 
+% \cbr{p_a}} + \sum_\alpha v_\alpha \Phi_\alpha,
+% \end{equation}
+% where $H$ is the \emph{canonical Hamiltonian} or simply \emph{Hamiltonian}.
+% 
+% \paragraph{Proposition}
+% $H$ is independent of $\cbr{p_\alpha}$.
+% 
+% \paragraph{Proposition}
+% Canonical equations with primary constraints
+% \begin{align}
+% \dot{q}_i &= \sbr{q_i, H}_\text{P} + \sum_\beta v_\beta 
+% \sbr{q_i, \phi_\beta}_\text{P},
+% \label{eq:q-i-primary}\\
+% \dot{p}_i &= \sbr{p_i, H}_\text{P} + \sum_\beta v_\beta 
+% \sbr{p_i, \phi_\beta}_\text{P}, \\
+% \rfun{\Phi_\alpha}{q, p} &= 0,
+% \end{align}
+% where $v_\beta$'s are undetermined. Note that \cref{eq:q-i-primary} for $i = 
+% \alpha$ holds identically: $\dot{q}_\alpha = \dot{q}_\alpha$.
+% 
+% Weak equality: $f_1 \approx f_2$ iff $\fat{f_1}{\Gamma_\text{P}} = 
+% \fat{f_2}{\Gamma_\text{P}}$.
+% 
+% \paragraph{Proposition} if $f$ and $g$ are two functions over the phase space 
+% $\Gamma$, and $f \approx h$, then
+% \begin{align}
+% \frpa{}{q_i} \rbr{f-\sum_\beta \phi_\beta \frpa{f}{p_\beta}} &\approx 
+% \frpa{}{q_i} \rbr{h-\sum_\beta \phi_\beta \frpa{h}{p_\beta}}, \\
+% \frpa{}{p_i} \rbr{f-\sum_\beta \phi_\beta \frpa{f}{p_\beta}} &\approx 
+% \frpa{}{p_i} \rbr{h-\sum_\beta \phi_\beta \frpa{h}{p_\beta}}.
+% \end{align}
+% 
+% \paragraph{Corollary}
+% $\forall H_1 \approx H$,
+% \begin{equation}
+% \dot{q}_i \approx \sbr{q_i, H}_\text{P},\qquad
+% \dot{p}_i \approx \sbr{p_i, H}_\text{P}.
+% \end{equation}
+% 
+% Primary and second constraints $\phi^{(1,)}_\mu$, $\phi^{(2,)}_\omega$; first 
+% and second class constraints $\phi^{(,1)}_u$, $\phi^{(,2)}_w$.
+
+
+
+\section{Examples}
+
+%\begin{equation}
+%L^\text{v} = \frac{1}{2} \sum_{i,j}\rfun{W_{ij}}{q} v_i v_j + \sum_i 
+%\rfun{\eta_i}{q} 
+%v_i - \rfun{V}{q}.
+%\end{equation}
+
+%\begin{equation}
+%p_i = \frpa{L^\text{v}}{v_i} = \sum_{i,j} W_{ij} v_j + \eta_i.
+%\end{equation}
+
+%Let
+%\begin{align}
+%\sum_j W_{ij} e_j^{(a)} &= \lambda^{(a)} e_i \neq 0, \\
+%\sum_j W_{ij} e_j^{(\alpha)} &= 0.
+%\end{align}
+
+\subsection{Toy examples}
+
+\subsubsection*{Example 0}
+\cite[sec.\ 1.2]{Gitman1990}
+\begin{equation}
+L = \frac{1}{2}\rbr{\dot{x}-y}^2
+\end{equation}
+
+
+\subsubsection*{Example 1}
+\begin{equation}
+L = \frac{1}{2} \dot{x}^2 + \dot{x} y - \frac{1}{2}\rbr{x-y}^2.
+\end{equation}
+
+% One has
+% \begin{equation}
+% L^\text{v} = \frac{1}{2} v_x^2 + v_x y - \frac{1}{2} \rbr{x-y}^2,
+% \end{equation}
+% so that
+% \begin{equation}
+% p_x = \frpa{L^\text{v}}{v_x} = v_x + y, \qquad p_y = 0,
+% \end{equation}
+% thus
+% \begin{equation}
+% \ol{v}_x = p_x - y.
+% \end{equation}
+% So that $v_y$ is the primary inexpressible velocity.
+% 
+% The extended Hamiltonian reads
+% \begin{equation}
+% \rfun{H^\text{v}}{q, p; v} = v_x p_x + v_y p_y - \frac{1}{2} v_x^2 - v_x y 
+% + \frac{1}{2}\rbr{x-y}^2,
+% \end{equation}
+% whilst the total Hamiltonian is
+% \begin{equation}
+% \rfun{H^\text{t}}{q, p; \ol{v}_x, v_y} = \frac{1}{2}\rbr{p_x - y}^2 + 
+% \frac{1}{2} \rbr{x-y}^2 + v_y p_y.
+% \end{equation}
+
+\subsubsection*{Example 2}
+
+\begin{equation}
+L = \frac{1}{2}\dot{x}^2 + \dot{x} y + \frac{1}{2}\rbr{x-y}^2
+\end{equation}
+
+% Primary constraint
+% \begin{equation}
+% p_y = 0;
+% \end{equation}
+% total Hamiltonian
+% \begin{equation}
+% H^\text{t} = \frac{1}{2}p_x^2 - p_x y - \frac{1}{2} x^2 + xy + v_y p_y.
+% \end{equation}
+
+\subsection*{Example 3}
+
+\begin{equation}
+L = \frac{1}{2} \rbr{\dot{q}_2 - \ee^{q_1}}^2 + \frac{1}{2} \rbr{\dot{q}_3 - 
+q_2}^2.
+\end{equation}
+
+
+
+\subsection{Parametrised systems}
+
+\subsubsection*{Non-relativistic point particle}
+
+\cite[sec.\ 3.1.1]{Kiefer2012}
+\begin{equation}
+\sfun{S}{\rfun{q}{t}} \coloneqq \int_{t_1}^{t_2}\dd t\,\rfun{L}{q, \frde{q}{t}}
+\end{equation}
+
+
+
+\subsubsection*{Relativistic charged point particle}
+
+\cite[sec.\ 15]{Landau1975},
+\cite[sec.\ 3.1.2]{Kiefer2012}
+\begin{equation}
+S \coloneqq \int -m\,\dd s + e \rfun{A_\mu}{x} \,\dd x^\mu \eqqcolon \int\dd 
+\tau\, L,\\
+\label{eq:point-charged-action}
+\end{equation}
+where the Lagrangian reads
+\begin{equation}
+L = -m \sqrt{-\eta_{\mu\nu} \dot{x}^\mu \dot{x}^\nu } + q \dot{x}^\mu 
+\rfun{A_\mu}{x}.
+\end{equation}
+
+\begin{equation}
+M_{\mu\nu} \coloneqq \frpa{^2 L^\text{v}}{\dot{x}^\mu\,\partial \dot{x}^\nu} = 
+m\frac{-\eta_{\mu\nu}\eta_{\alpha\beta} + \eta_{\mu\alpha}\eta_{\nu\beta}}% 
+{\rbr{-\eta_{\rho\sigma}\dot{x}^\rho \dot{x}^\sigma}^{3/2}} \dot{x}^\alpha 
+\dot{x}^\beta,
+\end{equation}
+which has one and only one eigenvector with null eigenvalue
+\begin{equation}
+\dot{x}^\mu M_{\mu\nu} = 0.
+\end{equation}
+
+\subsubsection{Neutral scalar field}
+\cite[sec.\ 3.3]{Kiefer2012}
+
+\subsection{Maxwell--Proca theory}
+
+\begin{equation}
+\Ld = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu} - \frac{1}{2}m^2 A_\mu A^\mu + 
+\frac{1}{2} F_{\mu\nu} S^{\mu\nu} + A_\mu J^\mu_\text{f},
+\end{equation}
+where $m > 0$ corresponds to the Proca theory \cite[sec.\ 2.3]{Gitman1990}, and 
+$m = 0$ the Maxwell theory \cite[sec.\ 3.3.3]{Rothe2010} \cite[sec.\ 
+2.4]{Gitman1990}.
+
+%\subsection{Dirac field}
+
+%\subsection{Gauge theories}
+
+%\subsubsection{Spinor electrodynamics}
+
+%\subsubsection{Yang--Mills theory}
+
+%\subsubsection{Yang--Mills--Higgs theory}
+
+\subsection{String theories}
+
+\subsubsection*{Relativistic point particle with auxiliary coordinate}
+
+\cite[sec.\ 2.1]{Blumenhagen2013}
+\begin{equation}
+L \coloneqq \frac{1}{2} \rbr{e^{-1}\eta_{\mu\nu}\dot{x}^\mu \dot{x}^\nu - m^2 e}
+\label{eq:point-aux-lagrangian}
+\end{equation}
+
+\subsubsection*{Nambu--Gotō action}
+
+Generalising the kinetic part of \eqref{eq:point-charged-action}, one has
+\begin{equation}
+S_\text{NG} \coloneqq -T \int_\Sigma \dd A
+\eqqcolon -T \int_\Sigma\dd^2\sigma \Ld,
+\end{equation}
+where the Lagrangian density
+\begin{equation}
+\Ld = \sqrt{-\Gamma},\quad
+\Gamma \coloneqq \det \Gamma_{\alpha\beta},\quad
+\Gamma_{\alpha\beta} \coloneqq \frpa{X^\nu}{\sigma^\alpha} 
+\frpa{X_\nu}{\sigma^\alpha}.
+\end{equation}
+
+
+Historically \cite{Goto1971,Nambu1970}; Reference e.g.\ 
+\cite{Blumenhagen2013}
+\cite[sec.\ 3.2]{Kiefer2012}
+
+\subsubsection*{Polyakov action}
+
+Generalising \eqref{eq:point-aux-lagrangian}
+\begin{equation}
+\sfun{S_\text{P}}{X^\mu, h{\alpha\beta}} = -\frac{T}{2}\int_\Sigma \Ld,
+\end{equation}
+where
+\begin{equation}
+\Ld \coloneqq \sqrt{-h} h^{\alpha\beta}\Gamma_{\alpha\beta}.
+\end{equation}
+
+
+
+Historically \cite{Brink1976,Deser1976,Polyakov1981};
+Reference
+\cite[sec.\ 3.2]{Kiefer2012}
+
+%\subsection{Gravitation theories}
+
+%\subsubsection{Einstein--Hilbert action}
+
+
+
+\printbibliography
+
+\end{document}
