@@ -29,7 +29,7 @@
 \begin{document}
 \maketitle
 
-\section{Canonical formalism}
+\section{Classical formalism}
 
 Lagrangian with velocity
 \begin{equation}
@@ -268,7 +268,7 @@ q_2}^2.
 
 \subsubsection*{Relativistic charged point particle}
 
-\cite[sec.\ 15]{Landau1975},
+\cite[sec.\ 16]{Landau1975},
 \cite[sec.\ 3.1.2]{Kiefer2012}
 \begin{equation}
 S \coloneqq \int -m\,\dd s + e \rfun{A_\mu}{x} \,\dd x^\mu \eqqcolon \int\dd 
@@ -324,8 +324,22 @@ constraint
 \end{equation}
 and the canonical Hamiltonian vanishes
 \begin{equation}
-H = 0.
+H^\text{c} = 0.
 \end{equation}
+
+To compare, note in the non-covariant formalism (\cite[sec.\ 8]{Landau1975})
+\begin{equation}
+S = \int \dd t\,L,\qquad L = -m\sqrt{1-\dot{\vec{x}}^2} - q \phi +
+q \dot{\vec{x}} \cdot \vec{A},
+\end{equation}
+the system is regular, and the canonical Hamiltonian reads
+\begin{equation}
+H^\text{c} = \sqrt{m^2 + \rbr{\vec{p}-q\vec{A}}^2} + q\phi,
+\end{equation}
+which corresponds to setting $\phi^{(1,1)} = 0$, $p_0 \to -H^\text{c}$ 
+($p_\mu = \rbr{-E, \vec{p}}$), and noting $A_\mu = \rbr{-\phi, \vec{A}}$.
+
+
 
 \subsubsection{Neutral scalar field}
 \cite[sec.\ 3.3]{Kiefer2012}
