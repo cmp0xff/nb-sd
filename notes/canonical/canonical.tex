@@ -61,7 +61,7 @@ gives the \emph{extended Euler--Lagrange equations}
 p_i = \frpa{L^\text{v}}{v_i}.
 \end{equation}
 
-Extended Hamiltonian
+Hamiltonian with velocity
 \begin{equation}
 \rfun{H^\text{v}}{q, p; v} \coloneqq \sum_i p_i v_i - L^\text{v}.
 \end{equation}
@@ -132,10 +132,11 @@ $H^\text{t}$ is linear in $v_\alpha$. One writes
 \rfun{H^\text{t}}{q, \cbr{p_a}; \cbr{p_\alpha}, \cbr{v_\alpha}} = \rfun{H}{q, 
 \cbr{p_a}} + \sum_\alpha v_\alpha \Phi_\alpha,
 \end{equation}
-where $H$ is the \emph{canonical Hamiltonian} or simply \emph{Hamiltonian}.
+where $H^\text{c}$ is the \emph{canonical Hamiltonian} or simply 
+\emph{Hamiltonian}.
 
 \paragraph{Proposition}
-$H$ is independent of $\cbr{p_\alpha}$.
+$H^\text{c}$ is independent of $\cbr{p_\alpha}$.
 
 \paragraph{Proposition}
 Canonical equations with primary constraints
@@ -220,7 +221,7 @@ thus
 \end{equation}
 So that $v_y$ is the primary inexpressible velocity.
 
-The extended Hamiltonian reads
+The Hamiltonian with velocity reads
 \begin{equation}
 \rfun{H^\text{v}}{q, p; v} = v_x p_x + v_y p_y - \frac{1}{2} v_x^2 - v_x y 
 + \frac{1}{2}\rbr{x-y}^2,
@@ -306,7 +307,7 @@ v^i = \frac{\xi \eta^{ij} \rbr{p_j - q A_j} v^0}{\sqrt{m^2 + \eta^{kl}
 \end{equation}
 where $\xi = \sgn v^0$. In the following $\xi = +1$ will be chosen.
 
-Inserting \cref{eq:point-charged-pvrel0} into the extended Hamiltonian
+Inserting \cref{eq:point-charged-pvrel0} into the Hamiltonian with velocity
 \begin{equation}
 H^\text{v} = v^\mu p_\mu - L^\text{v} = m\sqrt{-\eta_{\mu\nu}v^\mu v^\nu} + 
 v^\mu\rbr{p_\mu - q \rfun{A_\mu}{x}},
@@ -339,6 +340,58 @@ H^\text{c} = \sqrt{m^2 + \rbr{\vec{p}-q\vec{A}}^2} + q\phi,
 which corresponds to setting $\phi^{(1,1)} = 0$, $p_0 \to -H^\text{c}$ 
 ($p_\mu = \rbr{-E, \vec{p}}$), and noting $A_\mu = \rbr{-\phi, \vec{A}}$.
 
+\subsubsection*{Relativistic point particle with einbein}
+
+\cite[sec.\ 2.1]{Blumenhagen2013}
+\begin{equation}
+L \coloneqq \frac{1}{2} \rbr{e^{-1}\eta_{\mu\nu}\dot{x}^\mu \dot{x}^\nu - m^2 e}
+\label{eq:point-aux-lagrangian}
+\end{equation}
+
+\begin{equation}
+p_\mu = \frpa{L^\text{v}}{v^\mu} = e^{-1}\eta_{\mu\nu}v^\nu, \qquad
+p_e = 0.
+\end{equation}
+Choosing $v^e$ to be the primary inexpressible velocity, one has
+\begin{equation}
+v^\mu = e\eta^{\mu\nu}p_\nu.
+\end{equation}
+
+Hamiltonian with velocity
+\begin{equation}
+H^\text{v} = v^\mu p_\mu + v^e p_e + \frac{1}{2} \rbr{-e^{-1} \eta_{\mu\nu} 
+v^\mu v^\nu + m^2 e};
+\end{equation}
+total Hamiltonian
+\begin{equation}
+H^\text{t} = \frac{e}{2} \rbr{\eta^{\mu\nu}p_\mu p_\nu + m^2} + v^e p_e;
+\end{equation}
+canonical Hamiltonian
+\begin{equation}
+H^\text{c} = \frac{e}{2} \rbr{\eta^{\mu\nu}p_\mu p_\nu + m^2}.
+\end{equation}
+
+The only primary constraint
+\begin{equation}
+\Phi^{(1,)} = p_e;
+\end{equation}
+its time evolution
+\begin{align}
+\sbr{\Phi^{(1,)}, H^\text{t}}_\text{P} &=
+\sbr{p_e, e}_\text{P}\frac{1}{2}\rbr{\eta^{\mu\nu}p_\mu p_\nu + m^2}
+\nonumber \\
+&= -\frac{1}{2}\rbr{\eta^{\mu\nu}p_\mu p_\nu + m^2}.
+\end{align}
+Choose
+\begin{equation}
+\Phi^{(2,)} = \eta^{\mu\nu}p_\mu p_\nu + m^2,
+\end{equation}
+whose Possion bracket with $H^\text{t}$ vanishes; furthermore,
+\begin{equation}
+\sbr{\Phi^{(1,)},\Phi^{(2,)}}_\text{P} \equiv 0.
+\end{equation}
+Thus one ends up with two first-class constraints.
+
 
 
 \subsubsection{Neutral scalar field}
@@ -365,14 +418,6 @@ $m = 0$ the Maxwell theory \cite[sec.\ 3.3.3]{Rothe2010} \cite[sec.\
 %\subsubsection{Yang--Mills--Higgs theory}
 
 \subsection{String theories}
-
-\subsubsection*{Relativistic point particle with auxiliary coordinate}
-
-\cite[sec.\ 2.1]{Blumenhagen2013}
-\begin{equation}
-L \coloneqq \frac{1}{2} \rbr{e^{-1}\eta_{\mu\nu}\dot{x}^\mu \dot{x}^\nu - m^2 e}
-\label{eq:point-aux-lagrangian}
-\end{equation}
 
 \subsubsection*{Nambu--Gotō action}
 
