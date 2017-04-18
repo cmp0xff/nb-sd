@@ -261,7 +261,7 @@ q_2}^2.
 
 \cite[sec.\ 3.1.1]{Kiefer2012}
 \begin{equation}
-\sfun{S}{\rfun{q}{t}} \coloneqq \int_{t_1}^{t_2}\dd t\,\rfun{L}{q, \frde{q}{t}}
+\sfun{S}{\rfun{q}{t}} \coloneqq \int_{t_0}^{t_1}\dd t\,\rfun{L}{q, \frde{q}{t}}
 \end{equation}
 
 
@@ -271,8 +271,8 @@ q_2}^2.
 \cite[sec.\ 16]{Landau1975},
 \cite[sec.\ 3.1.2]{Kiefer2012}
 \begin{equation}
-S \coloneqq \int -m\,\dd s + e \rfun{A_\mu}{x} \,\dd x^\mu \eqqcolon \int\dd 
-\tau\, L,\\
+S \coloneqq \int_\gamma -m\,\dd s + e \rfun{A_\mu}{x} \,\dd x^\mu
+\eqqcolon \int_{\tau_0}^{\tau_1} \dd \tau\, L,\\
 \label{eq:point-charged-action}
 \end{equation}
 where the Lagrangian reads
@@ -315,7 +315,7 @@ Contracting the zero eigenvector with \cref{eq:point-charged-eld} yields
 so that it generates a gauge identity, and no further constraint exists. Thus 
 the system has a symmetry
 \begin{equation}
-\delta x^\mu = \dot{x}^\mu \delta \lambda.
+\dva x^\mu = \dot{x}^\mu \dva \lambda.
 \end{equation}
 
 \subsubsection*{Relativistic point particle with auxiliary coordinate}
@@ -366,7 +366,6 @@ e^{-1}\eta_{\mu\nu} & 0^\mu \\
 0^\nu & 0 \\
 \eta_{\mu\nu}\dot{x}^\mu & 0
 \end{pmatrix},
-
 \end{equation}
 and the new zero eigenvector $w^{(1)} = \rbr{e\dot{x}^\mu; 0, -1}$.
 
@@ -389,8 +388,8 @@ G\epsilon = E_\mu \dot{x}^\mu \epsilon + E_e \rbr{\dot{e} \epsilon + e
 \end{equation}
 so that
 \begin{align}
-\delta x^\mu &= \dot{x}^\mu \epsilon, \\
-\delta e &= \dot{e} \epsilon + e \dot{\epsilon}.
+\dva x^\mu &= \dot{x}^\mu \epsilon, \\
+\dva e &= \dot{e} \epsilon + e \dot{\epsilon}.
 \end{align}
 
 
@@ -404,12 +403,29 @@ so that
 \subsection{Maxwell--Proca theory}
 
 \begin{equation}
-\Ld = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu} - \frac{1}{2}m^2 A_\mu A^\mu + 
-\frac{1}{2} F_{\mu\nu} S^{\mu\nu} + A_\mu J^\mu_\text{f},
+\Ld = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu} - \frac{1}{2}m^2 A_\mu A^\mu + A_\mu 
+J^\mu
 \end{equation}
 where $m > 0$ corresponds to the Proca theory \cite[sec.\ 2.3]{Gitman1990}, and 
-$m = 0$ the Maxwell theory \cite[sec.\ 3.3.3]{Rothe2010} \cite[sec.\ 
+$m = 0$ the Maxwell theory \cite[sec.\ 3.3.3]{Rothe2010}, \cite[sec.\ 
 2.4]{Gitman1990}.
+
+\begin{equation}
+\Ld \equiv \frac{1}{2}\rbr{-\eta^{\alpha\beta}\eta^{\mu\nu} + \eta^{\alpha\nu} 
+\eta^{\beta^\mu}}\rbr{\partial_\mu A_\alpha}\rbr{\partial_\nu A_\beta}
+- \frac{1}{2} m^2 \eta^{\alpha\beta} A_\alpha A_\beta + A_\alpha J^\alpha
+\end{equation}
+
+
+\begin{align}
+E^\alpha &= \rbr{\frpa{}{A_\alpha} - \partial_\mu \frpa{}{\rbr{\partial_\mu 
+A_\alpha}}}\Ld \nonumber \\
+&= -m^2 A_\beta \eta^{\alpha\beta} + J^\alpha -\rbr{-\eta^{\alpha\beta} 
+\eta^{\mu\nu} + \eta^{\alpha\nu} \eta^{\beta^\mu}}
+\partial_\mu \partial_\nu A_\beta.
+\end{align}
+
+
 
 %\subsection{Dirac field}
 
