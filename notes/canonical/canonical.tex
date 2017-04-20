@@ -414,8 +414,8 @@ Lagrangian density with velocity
 \end{equation}
 momenta density
 \begin{equation}
-B^0 \coloneqq \frpa{\Ld^\text{v}}{V^0} = 0,\qquad
-B^i \coloneqq \frpa{\Ld^\text{v}}{V^i} = V^i - \partial^i A_0;
+B^0 \coloneqq \frpa{\Ld^\text{v}}{V_0} = 0,\qquad
+B^i \coloneqq \frpa{\Ld^\text{v}}{V_i} = V^i + \partial_i A^0;
 \end{equation}
 total and canonical Hamiltonian as well as primary constraint
 \begin{align}
@@ -424,6 +424,21 @@ total and canonical Hamiltonian as well as primary constraint
 F_{ij}^2 + \frac{m^2}{2} \rbr{-A_0^2 + A_i^2} - A_0 J^0 - A_i J^i,\\
 \Phi^{(1,)} &= B^0.
 \end{align}
+
+\begin{align}
+\sbr{{\Phi^{(1,)}}_1,{\mscrH^\text{t}_2}}_\text{P} &=
+{B^i}_1 {\partial_i}_2 \sbr{{B^0}_2, {A_0}_2}_\text{P} +
+\frac{m^2}{2}\sbr{{B^0}_1, {A_0^2}_2}_\text{P} -
+\sbr{{B^0}_1, {A_0}_2}_\text{P} {J^0}_2 \nonumber \\
+&= \sbr{-{B^i}_2 {\partial_i}_2 - m^2 A_0 + {J^0}_2}_\text{P}
+\rfun{\delta}{x_1 - x_2}.
+\end{align}
+
+\begin{equation}
+\Phi^{(2,)} = \partial_i B^i - m^2 A_0 + J^0.
+\end{equation}
+
+
 
 
 
