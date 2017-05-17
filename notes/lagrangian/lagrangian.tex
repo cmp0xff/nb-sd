@@ -486,7 +486,19 @@ Reference
 \subsection{Gravitation theories}
 
 \subsubsection*{Closed Friedmann universe}
-\cite[sec.\ 8.1.2]{Kiefer2012}
+This part adapts \cite[sec.\ 8.1.2]{Kiefer2012}.
+
+The total action reads
+\begin{equation}
+S \coloneqq S_\text{EG} + S_\phi,
+\end{equation}
+where $S_\text{EG}$ follows \eqref{eq:action-einstein-gravity}, and
+\begin{equation}
+S_\phi \coloneqq \int_\mscrM\dd^4 x\, \sqrt{-g}\,
+\rbr{-\frac{1}{2} g^{\mu\nu} \rbr{\nabla_\mu\phi} \rbr{\nabla_\nu\phi}
+-m^2\phi^2}.
+\end{equation}
+
 Adapting
 \begin{equation}
 \dd s^2 = -\rfun{N^2}{t}\,\dd t^2 + \rfun{a^2}{t}\,\dd\Omega_3^2,
@@ -508,31 +520,60 @@ K = \frac{3\dot{a}}{Na}.
 \end{equation}
 
 \begin{equation}
-S_\text{EG} = \frac{V_3}{16\pp\nG} \rbr{\int\dd t Na^3\rbr{R - 2\Lambda}
-- \sbr{\frac{6\dot{a}a^2}{N}}_{t_1}^{t_2}},
+S_\text{EG} = \frac{A_3}{16\pp\nG} \rbr{\int_{t_1}^{t_2} \dd t
+Na^3\rbr{R - 2\Lambda} - \sbr{\frac{6\dot{a}a^2}{N}}_{t_1}^{t_2}},
 \end{equation}
 where
 \begin{equation}
-V_3 = \int \sin^2\chi\,\sin\theta\,\dd\chi\,\dd\theta\,\dd\phi = 2\pp^2.
+A_3 = \int \sin^2\chi\,\sin\theta\,\dd\chi\,\dd\theta\,\dd\phi = 2\pp^2.
+\end{equation}
+The term proportional to $\ddot{a}/a$ in the integrand can be integrated by
+parts
+\begin{equation}
+\int_{t_1}^{t_2} \dd t\,Na^3 \frac{6}{N^2} \frac{\ddot{a}}{a}
+= 6\rbr{\sbr{\frac{\dot{a}a^2}{N}}_{t_1}^{t_2} - \int_{t_1}^{t_2}\dd t
+\,\dot{a}\frde{}{t}\frac{a^2}{N^2}},
+\end{equation}
+in which the first term cancels the Gibbons--Hawking--York term. One has
+\begin{equation}
+S_\text{EG} = \frac{3\pp}{4\nG}\int_{t_1}^{t_2} \dd t\,
+\rbr{-\frac{a}{N}\dot{a}^2 + N a - \frac{\Lambda}{3}N a^3}.
 \end{equation}
 
+The matter part reads
+\begin{equation}
+S_\phi = \pp^2 \int_{t_1}^{t_2}\dd t\,
+a^3 \rbr{\frac{1}{N}\dot{\phi}^2 - m^2\phi^2}.
+\end{equation}
+
+\begin{align}
+E_N &= \frac{3\pp}{4\nG}\rbr{\frac{a\dot{a}^2}{N^2}+a-\frac{\Lambda a^3}{3}}
+-\pp^2 a^3 \frac{\dot{\phi}^2}{N^2} ,\\
+E_a &= \frac{3\pp}{4\nG}\rbr{\frac{\dot{a}^2}{N}+N-\Lambda Na^2
++\frac{2a\ddot{a}}{N} - \frac{2a\dot{a}\dot{N}}{N^2}}
++3\pp^2a^2\rbr{\frac{\dot{\phi}^2}{N} - m^2\phi^2},\\
+E_\phi &= 2\pp^2 \rbr{-m^2 a^3 \phi - \frac{3 a^2 \dot{a}\dot{\phi}}{N}
+-\frac{a^3\ddot{\phi}}{N} + \frac{a^3\dot{\phi\dot{N}}}{N^2}}.
+\end{align}
 
 
-\subsubsection{Einstein--Hilbert action}
+\subsubsection{Einstein gravity}
 
 \begin{equation}
 S_\text{EG} = S_\text{EH} + S_\text{GHY},
+\label{eq:action-einstein-gravity}
 \end{equation}
+where the Einstein--Hilbert action
 \begin{equation}
 S_\text{EH} = \frac{1}{16\pp\nG}\int_\mscrM\dd^4 x\,\sqrt{-g}\, 
 \rbr{R-2\mitLambda},
 \end{equation}
-and
+and the Gibbons--Hawking--York action
 \begin{equation}
 S_\text{GHY} = -\frac{1}{8\pp\nG}\int_{\partial\mscrM}\dd^3 x\,\sqrt{h}\, K,
 \end{equation}
-which is named after \cite{Gibbons1977,York1972} but actually already mentioned 
-in \cite{Einstein1916}. See \cite{Dyer2009} for a brief review.
+which is named after \cite{Gibbons1977,York1972} but actually already
+mentioned in \cite{Einstein1916}. See \cite{Dyer2009} for a brief review.
 
 
 
