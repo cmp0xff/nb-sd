@@ -540,12 +540,13 @@ S_\text{EG} = \frac{3\pp}{4\nG}\int_{t_1}^{t_2} \dd t\,
 \rbr{-\frac{a}{N}\dot{a}^2 + N a - \frac{\Lambda}{3}N a^3}.
 \end{equation}
 
-The matter part reads
+The matter part of the action reads
 \begin{equation}
 S_\phi = \pp^2 \int_{t_1}^{t_2}\dd t\,
 a^3 \rbr{\frac{1}{N}\dot{\phi}^2 - m^2\phi^2}.
 \end{equation}
 
+One derives the Euler--Lagrange derivatives
 \begin{align}
 E_N &= \frac{3\pp}{4\nG}\rbr{\frac{a\dot{a}^2}{N^2}+a-\frac{\Lambda a^3}{3}}
 -\pp^2 a^3 \frac{\dot{\phi}^2}{N^2} ,\\
@@ -553,8 +554,59 @@ E_a &= \frac{3\pp}{4\nG}\rbr{-\frac{\dot{a}^2}{N}+N-\Lambda Na^2
 +\frac{2a\ddot{a}}{N} - \frac{2a\dot{a}\dot{N}}{N^2}}
 +3\pp^2a^2\rbr{\frac{\dot{\phi}^2}{N} - m^2\phi^2},\\
 E_\phi &= 2\pp^2 \rbr{-m^2 a^3 \phi - \frac{3 a^2 \dot{a}\dot{\phi}}{N}
--\frac{a^3\ddot{\phi}}{N} + \frac{a^3\dot{\phi}\dot{N}}{N^2}}.
+-\frac{a^3\ddot{\phi}}{N} + \frac{a^3\dot{\phi}\dot{N}}{N^2}},
 \end{align}
+and the primary mass matrix reads
+\begin{equation}
+\mbfM^{(0)} = \begin{pmatrix}
+0 & 0 & 0 \\ 0 & -\frac{3\pp}{2\nG}\frac{a}{N} & 0 \\
+0 & 0 & 2\pp^2\frac{a^3}{N},
+\end{pmatrix}
+\end{equation}
+so that the system is singular, with $w^{(0)} = \begin{pmatrix}
+1 & 0 & 0\end{pmatrix} \eqqcolon u^{(0)}$.
+
+Therefore, the only primary constraint
+\begin{equation}
+\phi^{(0)} \coloneqq u^{(0)}\cdot E^{(0)} = E_N,
+\end{equation}
+and
+\begin{align}
+E^{(1)} &\coloneqq \dot{\phi}^{(0)} = \dot{E}_N \\
+&= \frac{3\pp}{4\nG}\dot{a} 
+\rbr{\frac{\dot{a}^2}{N^2}+2\frac{a\ddot{a}}{N^2}
+-\frac{2a\dot{a}\dot{N}}{N^3}+1-\Lambda a^2} - \pp^2 \frac{a^2\dot{\phi}}{N^2}
+\rbr{3\dot{a}\dot{\phi}+2a\ddot{\phi}-2a\frac{\dot{N}}{N}}.
+\end{align}
+The secondary mass matrix
+\begin{equation}
+\mbfM^{(1)} = \begin{pmatrix}
+0 & 0 & 0 \\ 0 & -\frac{3\pp}{2\nG}\frac{a}{N} & 0 \\
+0 & 0 & 2\pp^2\frac{a^3}{N} \\
+0 & -\frac{3\pp}{2\nG}\frac{a\dot{a}}{N^2} & 2\pp^2\frac{a^3\dot{\phi}}{N^2},
+\end{pmatrix}
+\end{equation}
+and an additional left zero
+\begin{equation}
+w^{(1)} \coloneqq \begin{pmatrix}
+0 & \frac{\dot{a}}{N} & \frac{\dot{\phi}}{N} & -1
+\end{pmatrix}
+\eqqcolon v^{(1)}
+\end{equation}
+is obtained, resulting in a gauge identity
+\begin{equation}
+0 \equiv G = \frac{\dot{a}}{N} E_a + \frac{\dot{\phi}}{N} E_\phi - \dot{E}_N,
+\end{equation}
+which terminates the algorithm. The gauge transformation reads
+\begin{equation}
+\dva N = \dot{\epsilon},\qquad \dva a = \frac{\dot{a}}{N}\epsilon,\qquad
+\dva \phi = \frac{\dot{\phi}}{N}\epsilon.
+\end{equation}
+
+
+
+
+
 
 
 \subsubsection{Einstein gravity}
