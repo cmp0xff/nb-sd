@@ -463,7 +463,7 @@ Historically \cite{Nambu1970,Goto1971}; Reference e.g.\
 
 Generalising \eqref{eq:point-aux-lagrangian}
 \begin{equation}
-\sfun{S_\text{P}}{X^\mu, h{\alpha\beta}} = -\frac{T}{2}\int_\Sigma \Ld,
+\sfun{S_\text{P}}{X^\mu, h_{\alpha\beta}} = -\frac{T}{2}\int_\Sigma \Ld,
 \end{equation}
 where
 \begin{equation}
@@ -543,17 +543,17 @@ S_\text{EG} = \frac{3\pp}{4\nG}\int_{t_1}^{t_2} \dd t\,
 The matter part of the action reads
 \begin{equation}
 S_\phi = \pp^2 \int_{t_1}^{t_2}\dd t\,
-a^3 \rbr{\frac{1}{N}\dot{\phi}^2 - m^2\phi^2}.
+a^3 \rbr{\frac{1}{N}\dot{\phi}^2 - m^2N\phi^2}.
 \end{equation}
 
 One derives the Euler--Lagrange derivatives
 \begin{align}
 E_N &= \frac{3\pp}{4\nG}\rbr{\frac{a\dot{a}^2}{N^2}+a-\frac{\Lambda a^3}{3}}
--\pp^2 a^3 \frac{\dot{\phi}^2}{N^2} ,\\
+-\pp^2 a^3 \rbr{\frac{\dot{\phi}^2}{N^2} - m^2 N \phi^2} ,\\
 E_a &= \frac{3\pp}{4\nG}\rbr{-\frac{\dot{a}^2}{N}+N-\Lambda Na^2
 +\frac{2a\ddot{a}}{N} - \frac{2a\dot{a}\dot{N}}{N^2}}
-+3\pp^2a^2\rbr{\frac{\dot{\phi}^2}{N} - m^2\phi^2},\\
-E_\phi &= 2\pp^2 \rbr{-m^2 a^3 \phi - \frac{3 a^2 \dot{a}\dot{\phi}}{N}
++3\pp^2a^2\rbr{\frac{\dot{\phi}^2}{N} - m^2 N \phi^2},\\
+E_\phi &= 2\pp^2 \rbr{-m^2 N a^3 \phi - \frac{3 a^2 \dot{a}\dot{\phi}}{N}
 -\frac{a^3\ddot{\phi}}{N} + \frac{a^3\dot{\phi}\dot{N}}{N^2}},
 \end{align}
 and the primary mass matrix reads
@@ -574,9 +574,12 @@ and
 \begin{align}
 E^{(1)} &\coloneqq \dot{\phi}^{(0)} = \dot{E}_N \\
 &= \frac{3\pp}{4\nG}\dot{a} 
-\rbr{\frac{\dot{a}^2}{N^2}+2\frac{a\ddot{a}}{N^2}
--\frac{2a\dot{a}\dot{N}}{N^3}+1-\Lambda a^2} - \pp^2 \frac{a^2\dot{\phi}}{N^2}
-\rbr{3\dot{a}\dot{\phi}+2a\ddot{\phi}-2a\frac{\dot{N}}{N}}.
+\rbr{\frac{\dot{a}^2}{N^2}+2\frac{a\ddot{a}}{N^2} 
+-\frac{2a\dot{a}\dot{N}}{N^3}+1-\Lambda a^2}\nonumber \\
+&- \pp^2 a^2
+\rbr{3\frac{\dot{a}\dot{\phi}^2}{N^2} +2\frac{a\dot{\phi}\ddot{\phi}}{N^2}
+-2\frac{a\dot{N}\dot{\phi}^2}{N^3}-m^2\phi
+\rbr{3N\phi\dot{a}+a\phi\dot{N}+2aN\dot{\phi}}}.
 \end{align}
 The secondary mass matrix
 \begin{equation}
@@ -589,18 +592,18 @@ The secondary mass matrix
 and an additional left zero
 \begin{equation}
 w^{(1)} \coloneqq \begin{pmatrix}
-0 & \frac{\dot{a}}{N} & \frac{\dot{\phi}}{N} & -1
+0 & \dot{a} & \dot{\phi} & -N
 \end{pmatrix}
 \eqqcolon v^{(1)}
 \end{equation}
 is obtained, resulting in a gauge identity
 \begin{equation}
-0 \equiv G = \frac{\dot{a}}{N} E_a + \frac{\dot{\phi}}{N} E_\phi - \dot{E}_N,
+0 \equiv G = \dot{a} E_a + \dot{\phi} E_\phi - N\dot{E}_N,
 \end{equation}
 which terminates the algorithm. The gauge transformation reads
 \begin{equation}
-\dva N = \dot{\epsilon},\qquad \dva a = \frac{\dot{a}}{N}\epsilon,\qquad
-\dva \phi = \frac{\dot{\phi}}{N}\epsilon.
+\dva N = -\dot{N}\epsilon - N\dot{\epsilon},\qquad
+\dva a = \dot{a}\epsilon,\qquad \dva \phi = \dot{\phi}\epsilon.
 \end{equation}
 
 

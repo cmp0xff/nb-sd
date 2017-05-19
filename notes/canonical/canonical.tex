@@ -479,7 +479,7 @@ Historically \cite{Nambu1970,Goto1971}; Reference e.g.\
 
 Generalising \eqref{eq:point-aux-lagrangian}
 \begin{equation}
-\sfun{S_\text{P}}{X^\mu, h{\alpha\beta}} = -\frac{T}{2}\int_\Sigma \Ld,
+\sfun{S_\text{P}}{X^\mu, h_{\alpha\beta}} = -\frac{T}{2}\int_\Sigma \Ld,
 \end{equation}
 where
 \begin{equation}
@@ -522,10 +522,27 @@ R = \frac{6}{N^2}\rbr{-\frac{\dot{N}\dot{a}}{Na} + \frac{\ddot{a}}{a} +
 K = \frac{3\dot{a}}{Na}.
 \end{equation}
 
+Lagrangian with velocity
 \begin{equation}
 L^\text{v} = \frac{3\pp}{4\nG}\rbr{-\frac{a}{N} {v^a}^2 + Na - 
 \frac{\Lambda}{3} Na^3} + \pp^2 a^3 \rbr{\frac{1}{N^2}{v^\phi}^2 - m^2\phi^2}.
 \end{equation}
+Canonical momenta
+\begin{equation}
+p_N \coloneqq \frpa{L^\text{v}}{v^N} = 0,\quad
+p_a \coloneqq \frpa{L^\text{v}}{v^a} = -\frac{3\pp}{2\nG} \frac{a}{N} v^a,\quad
+p_\phi \coloneqq \frpa{L^\text{v}}{v^\phi} = 2\pp^2 \frac{a^3}{N} v^\phi.
+\end{equation}
+Choosing $v^N$ to be the primary inexpressible velocity, one obtains the total 
+and canonical Hamiltonians
+\begin{align}
+H^\text{t} &= H^\text{c} + v^N p_N, \\
+H^\text{c} &= -\frac{\nG}{3\pp} \frac{N}{a} p_a^2 + \frac{1}{4\pp^2} 
+\frac{N}{a^3} p_\phi^2 + \frac{3\pp}{4\nG}\rbr{\frac{\Lambda}{3}a^2 - 1}Na
++ \pp^2 m^2 a^3 \phi^2.
+\end{align}
+
+
 
 
 \subsubsection{Einstein--Hilbert action}
