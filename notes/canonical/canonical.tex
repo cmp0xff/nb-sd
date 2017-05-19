@@ -226,11 +226,50 @@ The Hamiltonian with velocity reads
 \rfun{H^\text{v}}{q, p; v} = v_x p_x + v_y p_y - \frac{1}{2} v_x^2 - v_x y 
 + \frac{1}{2}\rbr{x-y}^2,
 \end{equation}
-whilst the total Hamiltonian is
+whilst the total and canonical Hamiltonians are
+\begin{align}
+\rfun{H^\text{t}}{q, p; \ol{v}_x, v_y} &= H^\text{c} + v_y \Phi_1,\\
+\rfun{H^\text{c}}{q, p} &= \frac{1}{2}\rbr{p_x - y}^2 + \frac{1}{2} \rbr{x-y}^2,
+\end{align}
+where the only primary constraint $\Phi_1 = p_y$.
+
+Persistence condition of $\Phi_1$ leads to
 \begin{equation}
-\rfun{H^\text{t}}{q, p; \ol{v}_x, v_y} = \frac{1}{2}\rbr{p_x - y}^2 + 
-\frac{1}{2} \rbr{x-y}^2 + v_y p_y.
+0 \approx \sbr{\Phi_1, H^\text{t}}_\text{P} = p_x + x - 2y \eqqcolon \Phi_2.
 \end{equation}
+Note that $\sbr{\Phi_1, \Phi_2} = p_x - x$ does not vanish on $\Gamma$, thus 
+$\Phi_{1,2}$ are second-class constraints, and no more constraint can be 
+generated. To solve for $v_y$ one evaluates
+\begin{equation}
+0 \eqqcolon \sbr{\Phi_1, H^\text{t}}_\text{P} = p_x - x - 2v_y,
+\end{equation}
+so that $v_y \coloneqq \rbr{p_x - x}/2$ solves the constraint.
+
+One also has
+\begin{equation}
+Q_{\alpha\beta} = \sbr{\Phi_\alpha, \Phi_\beta}_\text{P} =
+\begin{pmatrix} 0 & +2 \\ -2 & 0 \end{pmatrix},\qquad
+\rbr{Q^{-1}}_{\alpha\beta} =
+\begin{pmatrix} 0 & -1/2 \\ +1/2 & 0 \end{pmatrix},
+\end{equation}
+so that the Dirac brackets are defined as
+\begin{equation}
+\sbr{f,g}_\text{D} \coloneqq \sbr{f,g}_\text{P} + \frac{1}{2}
+\rbr{\sbr{f,p_y}_\text{P}\sbr{p_x+x-2y,g}_\text{P}
+-\sbr{f,p_x+x-2y}_\text{P}\sbr{p_y,g}_\text{P}}.
+\end{equation}
+The fundamental ones different from Possion brackets are
+\begin{equation}
+\sbr{x,y}_\text{D} = \sbr{y,p_x}_\text{D} = \frac{1}{2},\qquad
+\sbr{y,p_y}_\text{D} = 0.
+\end{equation}
+\textbf{Last one different from book?}
+
+
+
+
+
+
 
 \subsubsection*{Example 2}
 
@@ -594,7 +633,7 @@ Evaluating the time evolution of $\Phi$ yields
 \end{equation}
 so that the Hamiltonian constraint is indeed a constraint. There is no further 
 constraint, and $\sbr{\Phi, H_\perp}_\text{P}$ vanishes identically. Therefore 
-there exists and only exists two second-class constraints.
+there are two and only two first-class constraints.
 
 
 
