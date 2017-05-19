@@ -501,7 +501,19 @@ Reference
 \subsection{Gravitation theories}
 
 \subsubsection*{Closed Friedmann universe}
-\cite[sec.\ 8.1.2]{Kiefer2012}
+This part adapts \cite[sec.\ 8.1.2]{Kiefer2012}.
+
+The total action reads
+\begin{equation}
+S \coloneqq S_\text{EG} + S_\phi,
+\end{equation}
+where $S_\text{EG}$ follows \eqref{eq:action-einstein-gravity}, and
+\begin{equation}
+S_\phi \coloneqq \int_\mscrM\dd^4 x\, \sqrt{-g}\,
+\rbr{-\frac{1}{2} g^{\mu\nu} \rbr{\nabla_\mu\phi} \rbr{\nabla_\nu\phi}
+-m^2\phi^2}.
+\end{equation}
+
 Adapting
 \begin{equation}
 \dd s^2 = -\rfun{N^2}{t}\,\dd t^2 + \rfun{a^2}{t}\,\dd\Omega_3^2,
@@ -522,10 +534,38 @@ R = \frac{6}{N^2}\rbr{-\frac{\dot{N}\dot{a}}{Na} + \frac{\ddot{a}}{a} +
 K = \frac{3\dot{a}}{Na}.
 \end{equation}
 
+\begin{equation}
+S_\text{EG} = \frac{A_3}{16\pp\nG} \rbr{\int_{t_1}^{t_2} \dd t
+Na^3\rbr{R - 2\Lambda} - \sbr{\frac{6\dot{a}a^2}{N}}_{t_1}^{t_2}},
+\end{equation}
+where
+\begin{equation}
+A_3 = \int \sin^2\chi\,\sin\theta\,\dd\chi\,\dd\theta\,\dd\phi = 2\pp^2.
+\end{equation}
+The term proportional to $\ddot{a}/a$ in the integrand can be integrated by
+parts
+\begin{equation}
+\int_{t_1}^{t_2} \dd t\,Na^3 \frac{6}{N^2} \frac{\ddot{a}}{a}
+= 6\rbr{\sbr{\frac{\dot{a}a^2}{N}}_{t_1}^{t_2} - \int_{t_1}^{t_2}\dd t
+\,\dot{a}\frde{}{t}\frac{a^2}{N^2}},
+\end{equation}
+in which the first term cancels the Gibbons--Hawking--York term. One has
+\begin{equation}
+S_\text{EG} = \frac{3\pp}{4\nG}\int_{t_1}^{t_2} \dd t\,
+\rbr{-\frac{a}{N}\dot{a}^2 + N a - \frac{\Lambda}{3}N a^3}.
+\end{equation}
+
+The matter part of the action reads
+\begin{equation}
+S_\phi = \pp^2 \int_{t_1}^{t_2}\dd t\,
+a^3 \rbr{\frac{1}{N}\dot{\phi}^2 - m^2N\phi^2}.
+\end{equation}
+
 Lagrangian with velocity
 \begin{equation}
 L^\text{v} = \frac{3\pp}{4\nG}\rbr{-\frac{a}{N} {v^a}^2 + Na - 
-\frac{\Lambda}{3} Na^3} + \pp^2 a^3 \rbr{\frac{1}{N^2}{v^\phi}^2 - m^2\phi^2}.
+\frac{\Lambda}{3} Na^3} + \pp^2 a^3 \rbr{\frac{1}{N}{v^\phi}^2 - m^2 N 
+\phi^2}.
 \end{equation}
 Canonical momenta
 \begin{equation}
@@ -536,11 +576,26 @@ p_\phi \coloneqq \frpa{L^\text{v}}{v^\phi} = 2\pp^2 \frac{a^3}{N} v^\phi.
 Choosing $v^N$ to be the primary inexpressible velocity, one obtains the total 
 and canonical Hamiltonians
 \begin{align}
-H^\text{t} &= H^\text{c} + v^N p_N, \\
-H^\text{c} &= -\frac{\nG}{3\pp} \frac{N}{a} p_a^2 + \frac{1}{4\pp^2} 
-\frac{N}{a^3} p_\phi^2 + \frac{3\pp}{4\nG}\rbr{\frac{\Lambda}{3}a^2 - 1}Na
-+ \pp^2 m^2 a^3 \phi^2.
+H^\text{t} &= H^\text{c} + v^N \Phi, \\
+H^\text{c} &= -N H_\perp,
 \end{align}
+where
+\begin{align}
+H_\perp &\coloneqq \frac{\nG}{3\pp} \frac{p_a^2}{a}  - \frac{1}{4\pp^2} 
+\frac{p_\phi^2}{a^3}  - \frac{3\pp}{4\nG}\rbr{\frac{\Lambda}{3}a^2 - 1}a
+- \pp^2 m^2 a^3 \phi^2, \\
+\Phi &= p_N
+\end{align}
+are the \emph{Hamiltonian constraint} and the primary constraint, respectively.
+
+Evaluating the time evolution of $\Phi$ yields
+\begin{equation}
+\sbr{\Phi,H^t}_\text{P} = H_\perp,
+\end{equation}
+so that the Hamiltonian constraint is indeed a constraint. There is no further 
+constraint, and $\sbr{\Phi, H_\perp}_\text{P}$ vanishes identically. Therefore 
+there exists and only exists two second-class constraints.
+
 
 
 
@@ -549,6 +604,7 @@ H^\text{c} &= -\frac{\nG}{3\pp} \frac{N}{a} p_a^2 + \frac{1}{4\pp^2}
 
 \begin{equation}
 S_\text{EG} = S_\text{EH} + S_\text{GHY},
+\label{eq:action-einstein-gravity}
 \end{equation}
 \begin{equation}
 S_\text{EH} = \frac{1}{16\pp\nG}\int_\mscrM\dd^4 x\,\sqrt{-g} 
