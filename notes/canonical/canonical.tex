@@ -456,26 +456,67 @@ momenta density
 B^0 \coloneqq \frpa{\Ld^\text{v}}{V_0} = 0,\qquad
 B^i \coloneqq \frpa{\Ld^\text{v}}{V_i} = V^i + \partial_i A^0;
 \end{equation}
-total and canonical Hamiltonian as well as primary constraint
+total and canonical Hamiltonians
 \begin{align}
-\mscrH^\text{t} &= \mscrH^\text{c} + V_0 \Phi^{(1,)},\\
-\mscrH^\text{c} &= \frac{1}{2} B_i^2 + B_i \partial_i A_0 + \frac{1}{4} 
+\mscrH^\text{t} &= \mscrH^\text{c} + V_0 \Phi_1,\\
+\mscrH^\text{c} &= \frac{1}{2} \rbr{B^i}^2 + B^i \partial_i A_0 + \frac{1}{4} 
 F_{ij}^2 + \frac{m^2}{2} \rbr{-A_0^2 + A_i^2} - A_0 J^0 - A_i J^i,\\
-\Phi^{(1,)} &= B^0.
 \end{align}
+where
+\begin{equation}
+\Phi_1 = B^0
+\end{equation}
+is the only primary constraint.
+
 
 \begin{align}
-\sbr{{\Phi^{(1,)}}_1,{\mscrH^\text{t}_2}}_\text{P} &=
+\sbr{{\Phi_1}_1,{\mscrH^\text{t}_2}}_\text{P} &=
 {B^i}_1 {\partial_i}_2 \sbr{{B^0}_2, {A_0}_2}_\text{P} +
 \frac{m^2}{2}\sbr{{B^0}_1, {A_0^2}_2}_\text{P} -
 \sbr{{B^0}_1, {A_0}_2}_\text{P} {J^0}_2 \nonumber \\
-&= \sbr{-{B^i}_2 {\partial_i}_2 - m^2 A_0 + {J^0}_2}_\text{P}
-\rfun{\delta}{x_1 - x_2}.
+&= \rbr{-{B^i}_2 {\partial_i}_2 - m^2 {A_0}_2 + {J^0}_2}
+\rfun{\delta}{\vec{x}_1 - \vec{x}_2}.
 \end{align}
-
+Integration with $\dd^3 x_2$ yields the secondary constraint
 \begin{equation}
-\Phi^{(2,)} = \partial_i B^i - m^2 A_0 + J^0.
+\sbr{\Phi_1, H^\text{t}}_\text{P} = \partial_i B^i - m^2 A_0 + J^0 
+\eqqcolon \Phi_2,
 \end{equation}
+so that
+\begin{equation}
+\sbr{\Phi_1,\Phi_2}_\text{P} = m^2\rfun{\delta}{\vec{x}_1-\vec{x}_2}.
+\label{eq:Maxwell-Proca-Q}
+\end{equation}
+One may further compute
+\begin{equation}
+\sbr{{\Phi_2}_1, {\mscrH^\text{c}}_2}_\text{P} = \sbr{{\partial_i}_1 {B^i}_1,
+\frac{1}{4} {F_{jk}^2}_2 + \frac{m^2}{2} {A_j^2}_2 - {A_j}_2 {J^j}_2}_\text{P},
+\end{equation}
+in which
+\begin{align}
+\sbr{{\partial_i}_1 {B^i}_1, \frac{1}{4} {F_{jk}^2}_2}_\text{P} &=
+\rbr{{\partial_j}_2 {A_k}_2 - {\partial_k}_2 {A_j}_2}
+{\partial_i}_1 \sbr{{B^i}_1, \rbr{{\partial_j}_2 {A_k}_2}}_\text{P} \nonumber \\
+&= -{F^{ij}}_2 {\partial_i}_1{\partial_j}_2\rfun{\delta}{\vec{x}_1-\vec{x}_2}.
+\end{align}
+The Poisson bracket can be evaluated to be
+\begin{equation}
+\sbr{{\Phi_2}_1, {\mscrH^\text{c}}_2}_\text{P} =
+-\rbr{{F_{ij}}_2 {\partial_j}_2 + m^2 {A^i}_2 + {J^i}_2}
+{\partial_i}_1\rfun{\delta}{\vec{x}_1-\vec{x}_2}.
+\end{equation}
+Integration with $\dd^3 x_2$ yields
+\begin{equation}
+\sbr{\Phi_2, H^\text{c}}_\text{P} = \partial_i\rbr{m^2 A^i + J^i}.
+\end{equation}
+
+For Proca theory $m > 0$ , then the algorithm terminates, and one obtains a 
+second-class system.
+
+For Maxwell theory $m = 0$.
+
+
+
 
 
 
