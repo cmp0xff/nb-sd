@@ -54,7 +54,7 @@ Variation of
 \sfun{S}{q, p; v} \coloneqq \int\dd t\,\sbr{L^\text{v} + \sum_i 
 p_i\rbr{\dot{q}_i - v_i}}.
 \end{equation}
-gives the \emph{extended Euler--Lagrange equations}
+gives the \emph{Euler--Lagrange equations with velocities}
 \begin{equation}
 \dot{q}_i = v_i,\quad
 \dot{p}_i = \frpa{L^\text{v}}{q_i},\quad
@@ -76,7 +76,7 @@ Variation of
 \sfun{S}{q, p; v} \coloneqq \int\dd t\,\sbr{\sum_i 
 p_i \dot{q}_i - H^\text{v}}
 \end{equation}
-gives the \emph{extended canonical equations}
+gives the \emph{canonical equations with velocities}
 \begin{equation}
 \dot{q}_i = \sbr{q_i, H^\text{v}}_\text{P},\quad
 \dot{p}_i = \sbr{p_i, H^\text{v}}_\text{P},\quad
@@ -108,9 +108,9 @@ where
 \end{equation}
 
 
-\emph{Total Hamiltonian}
+\emph{Hamiltonian with primary constraint}
 \begin{equation}
-H^\text{t} \coloneqq \fat{H^\text{v}}{\cbr{v_a = \ol{v}_a}} \equiv
+H^\text{p} \coloneqq \fat{H^\text{v}}{\cbr{v_a = \ol{v}_a}} \equiv
 \rfun{H^\text{v}}{q, p; \cbr{\rfun{\ol{v}^a}{q, p_a; \cbr{v_\alpha}}, 
 v_\alpha}}.
 \end{equation}
@@ -123,13 +123,13 @@ v_\alpha}}.
 
 Since
 \begin{equation}
-\frpa{H^\text{t}}{v_\alpha} =
+\frpa{H^\text{p}}{v_\alpha} =
 \fat{\frpa{H^\text{v}}{v_\alpha}}{\cbr{v_a = \ol{v}_a}} = \Phi_\alpha
 \equiv p_\alpha - \rfun{\ol{p}_\alpha}{q, \cbr{p_a}},
 \end{equation}
-$H^\text{t}$ is linear in $v_\alpha$. One writes
+$H^\text{p}$ is linear in $v_\alpha$. One writes
 \begin{equation}
-\rfun{H^\text{t}}{q, \cbr{p_a}; \cbr{p_\alpha}, \cbr{v_\alpha}} = \rfun{H}{q, 
+\rfun{H^\text{p}}{q, \cbr{p_a}; \cbr{p_\alpha}, \cbr{v_\alpha}} = \rfun{H}{q, 
 \cbr{p_a}} + \sum_\alpha v_\alpha \Phi_\alpha,
 \end{equation}
 where $H^\text{c}$ is the \emph{canonical Hamiltonian} or simply 
@@ -226,22 +226,22 @@ The Hamiltonian with velocity reads
 \rfun{H^\text{v}}{q, p; v} = v_x p_x + v_y p_y - \frac{1}{2} v_x^2 - v_x y 
 + \frac{1}{2}\rbr{x-y}^2,
 \end{equation}
-whilst the total and canonical Hamiltonians are
+whilst the Hamiltonians are
 \begin{align}
-\rfun{H^\text{t}}{q, p; \ol{v}_x, v_y} &= H^\text{c} + v_y \Phi_1,\\
+\rfun{H^\text{p}}{q, p; \ol{v}_x, v_y} &= H^\text{c} + v_y \Phi_1,\\
 \rfun{H^\text{c}}{q, p} &= \frac{1}{2}\rbr{p_x - y}^2 + \frac{1}{2} \rbr{x-y}^2,
 \end{align}
 where the only primary constraint $\Phi_1 = p_y$.
 
 Persistence condition of $\Phi_1$ leads to
 \begin{equation}
-0 \approx \sbr{\Phi_1, H^\text{t}}_\text{P} = p_x + x - 2y \eqqcolon \Phi_2.
+0 \approx \sbr{\Phi_1, H^\text{p}}_\text{P} = p_x + x - 2y \eqqcolon \Phi_2.
 \end{equation}
 Note that $\sbr{\Phi_1, \Phi_2} = p_x - x$ does not vanish on $\Gamma$, thus 
 $\Phi_{1,2}$ are second-class constraints, and no more constraint can be 
 generated. To solve for $v_y$ one evaluates
 \begin{equation}
-0 \eqqcolon \sbr{\Phi_1, H^\text{t}}_\text{P} = p_x - x - 2v_y,
+0 \eqqcolon \sbr{\Phi_1, H^\text{p}}_\text{P} = p_x - x - 2v_y,
 \end{equation}
 so that $v_y \coloneqq \rbr{p_x - x}/2$ solves the constraint.
 
@@ -281,9 +281,9 @@ Primary constraint
 \begin{equation}
 p_y = 0;
 \end{equation}
-total Hamiltonian
+Hamiltonian with primary constraint
 \begin{equation}
-H^\text{t} = \frac{1}{2}p_x^2 - p_x y - \frac{1}{2} x^2 + xy + v_y p_y.
+H^\text{p} = \frac{1}{2}p_x^2 - p_x y - \frac{1}{2} x^2 + xy + v_y p_y.
 \end{equation}
 
 \subsection*{Example 3}
@@ -351,9 +351,9 @@ Inserting \cref{eq:point-charged-pvrel0} into the Hamiltonian with velocity
 H^\text{v} = v^\mu p_\mu - L^\text{v} = m\sqrt{-\eta_{\mu\nu}v^\mu v^\nu} + 
 v^\mu\rbr{p_\mu - q \rfun{A_\mu}{x}},
 \end{equation}
-one obtains the total Hamiltonian
+one obtains the Hamiltonian with primary constraint
 \begin{equation}
-H^\text{t} = v^0 \rbr{p_0 - q A_0 + \sqrt{m^2 + \eta^{kl}
+H^\text{p} = v^0 \rbr{p_0 - q A_0 + \sqrt{m^2 + \eta^{kl}
 \rbr{p_k - q A_k}\rbr{p_l - q A_l}}},
 \end{equation}
 where only a primary constraint survives, which is obviously a first-class 
@@ -401,9 +401,9 @@ Hamiltonian with velocity
 H^\text{v} = v^\mu p_\mu + v^e p_e + \frac{1}{2} \rbr{-e^{-1} \eta_{\mu\nu} 
 v^\mu v^\nu + m^2 e};
 \end{equation}
-total Hamiltonian
+Hamiltonian with primary constraint
 \begin{equation}
-H^\text{t} = \frac{e}{2} \rbr{\eta^{\mu\nu}p_\mu p_\nu + m^2} + v^e p_e;
+H^\text{p} = \frac{e}{2} \rbr{\eta^{\mu\nu}p_\mu p_\nu + m^2} + v^e p_e;
 \end{equation}
 canonical Hamiltonian
 \begin{equation}
@@ -416,7 +416,7 @@ The only primary constraint
 \end{equation}
 its time evolution
 \begin{align}
-\sbr{\Phi^{(1,)}, H^\text{t}}_\text{P} &=
+\sbr{\Phi^{(1,)}, H^\text{p}}_\text{P} &=
 \sbr{p_e, e}_\text{P}\frac{1}{2}\rbr{\eta^{\mu\nu}p_\mu p_\nu + m^2}
 \nonumber \\
 &= -\frac{1}{2}\rbr{\eta^{\mu\nu}p_\mu p_\nu + m^2}.
@@ -425,7 +425,7 @@ Choose
 \begin{equation}
 \Phi^{(2,)} = \eta^{\mu\nu}p_\mu p_\nu + m^2,
 \end{equation}
-whose Possion bracket with $H^\text{t}$ vanishes; furthermore,
+whose Possion bracket with $H^\text{p}$ vanishes; furthermore,
 \begin{equation}
 \sbr{\Phi^{(1,)},\Phi^{(2,)}}_\text{P} \equiv 0.
 \end{equation}
@@ -454,12 +454,12 @@ Lagrangian density with velocity
 momenta density
 \begin{equation}
 B^0 \coloneqq \frpa{\Ld^\text{v}}{V_0} = 0,\qquad
-B^i \coloneqq \frpa{\Ld^\text{v}}{V_i} = V^i + \partial_i A^0;
+B^i \coloneqq \frpa{\Ld^\text{v}}{V_i} = V^i - \partial^i A_0;
 \end{equation}
-total and canonical Hamiltonians
+Hamiltonians
 \begin{align}
-\mscrH^\text{t} &= \mscrH^\text{c} + V_0 \Phi_1,\\
-\mscrH^\text{c} &= \frac{1}{2} \rbr{B^i}^2 + B^i \partial_i A_0 + \frac{1}{4} 
+\mscrH^\text{p} &= \mscrH^\text{c} + V_0 \Phi_1,\\
+\mscrH^\text{c} &= \frac{1}{2} \rbr{B^i}^2 - B^i \partial_i A_0 + \frac{1}{4} 
 F_{ij}^2 + \frac{m^2}{2} \rbr{-A_0^2 + A_i^2} - A_0 J^0 - A_i J^i,\\
 \end{align}
 where
@@ -470,7 +470,7 @@ is the only primary constraint.
 
 
 \begin{align}
-\sbr{{\Phi_1}_1,{\mscrH^\text{t}_2}}_\text{P} &=
+\sbr{{\Phi_1}_1,{\mscrH^\text{p}_2}}_\text{P} &=
 {B^i}_1 {\partial_i}_2 \sbr{{B^0}_2, {A_0}_2}_\text{P} +
 \frac{m^2}{2}\sbr{{B^0}_1, {A_0^2}_2}_\text{P} -
 \sbr{{B^0}_1, {A_0}_2}_\text{P} {J^0}_2 \nonumber \\
@@ -479,12 +479,12 @@ is the only primary constraint.
 \end{align}
 Integration with $\dd^3 x_2$ yields the secondary constraint
 \begin{equation}
-\sbr{\Phi_1, H^\text{t}}_\text{P} = \partial_i B^i - m^2 A_0 + J^0 
+\sbr{\Phi_1, H^\text{p}}_\text{P} = \partial_i B^i - m^2 A_0 + J^0 
 \eqqcolon \Phi_2,
 \end{equation}
 so that
 \begin{equation}
-\sbr{\Phi_1,\Phi_2}_\text{P} = m^2\rfun{\delta}{\vec{x}_1-\vec{x}_2}.
+\sbr{\Phi_1,\Phi_2}_\text{P} = -m^2\rfun{\delta}{\vec{x}_1-\vec{x}_2}.
 \label{eq:Maxwell-Proca-Q}
 \end{equation}
 One may further compute
@@ -507,11 +507,41 @@ The Poisson bracket can be evaluated to be
 \end{equation}
 Integration with $\dd^3 x_2$ yields
 \begin{equation}
-\sbr{\Phi_2, H^\text{c}}_\text{P} = \partial_i\rbr{m^2 A^i + J^i}.
+\sbr{\Phi_2, H^\text{c}}_\text{P} = -\partial_i\rbr{m^2 A^i + J^i}.
 \end{equation}
 
 For Proca theory $m > 0$ , then the algorithm terminates, and one obtains a 
-second-class system.
+pure second-class system.
+
+\begin{alignat}{3}
+\alpha_i &= A_i + m^{-2}\partial_i B^0,&\qquad \beta^i &= B^i; \\
+\alpha_0 &= A_0 + m^{-2}\partial_i B^i,&\qquad \beta^0 &= B^0.
+\end{alignat}
+
+\begin{equation}
+\mscrH^\text{p} = \mscrH^\text{phy}+\mscrH^\text{con}+\mscrH^\text{bon},
+\end{equation}
+where
+\begin{align}
+\begin{split}
+\mscrH^\text{phy} &= \frac{1}{2}\rbr{\beta^i}^2 + 
+\frac{1}{2m^2}\rbr{\partial_i \beta^i}^2 + \frac{1}{4}\rbr{\partial_i \alpha_j - 
+\alpha_j \partial_i}^2 + \frac{m^2}{2}\alpha_i^2 \\
+&\quad -\alpha_i J^i + \frac{1}{m^2}\rbr{\partial_i \beta^i}J^0,
+\end{split}\\
+\begin{split}
+\mscrH^\text{con} &= -\frac{m^2}{2}\alpha_0^2 - \frac{1}{2m^2} 
+\rbr{\partial_i \beta^0}^2 \\
+&\quad -\alpha_0 J^0 + \frac{1}{m^2}\rbr{\rbr{\partial_i \beta^0} J^i - 
+\beta^0\rbr{\partial_i J^i}},
+\end{split}\\
+\mscrH^\text{bon} &= \partial_i\rbr{\alpha_0\beta^i - \beta^0\alpha_i} + 
+\frac{1}{m^2}\partial_i \rbr{\beta^0\partial_i \beta^0 - 
+\beta^i\partial_j\beta^j}.
+\end{align}
+
+
+
 
 For Maxwell theory $m = 0$.
 
@@ -653,10 +683,9 @@ p_N \coloneqq \frpa{L^\text{v}}{v^N} = 0,\quad
 p_a \coloneqq \frpa{L^\text{v}}{v^a} = -\frac{3\pp}{2\nG} \frac{a}{N} v^a,\quad
 p_\phi \coloneqq \frpa{L^\text{v}}{v^\phi} = 2\pp^2 \frac{a^3}{N} v^\phi.
 \end{equation}
-Choosing $v^N$ to be the primary inexpressible velocity, one obtains the total 
-and canonical Hamiltonians
+Choosing $v^N$ to be the primary inexpressible velocity, one obtains
 \begin{align}
-H^\text{t} &= H^\text{c} + v^N \Phi, \\
+H^\text{p} &= -N H_\perp + v^N \Phi, \\
 H^\text{c} &= -N H_\perp,
 \end{align}
 where
