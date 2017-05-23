@@ -514,15 +514,43 @@ Integration with $\dd^3 x_2$ yields
 
 For Proca theory $m > 0$ , then the algorithm terminates, and one obtains a 
 pure second-class system.
+\begin{equation}
+\mbfQ = \begin{pmatrix}0 & -m^2 \\ +m^2 & 0\end{pmatrix},
+\qquad
+\mbfQ^{-1} = \begin{pmatrix}0 & +m^{-2} \\ -m^{-2} & 0\end{pmatrix}.
+\end{equation}
+Dirac bracket
+\begin{equation}
+\begin{split}
+&\phantom{}
+\sbr{\rfun{f}{\vec{x}_1},\rfun{g}{\vec{x}_2}}_\text{D} =
+\sbr{\rbr{f}_1, \rbr{g}_2}_\text{P} + \int \dd^d x_3 \\
+\Bigl(&- \sbr{\rbr{f}_1, \rbr{B^0}_3}_\text{P}
+\sbr{\rbr{m^{-2}\partial_i B^i + A_0}_3, \rbr{g}_2}_\text{P} \\
+&+ \sbr{\rbr{f}_1, \rbr{m^{-2}\partial_i B^i + A_0}_3}_\text{P}
+\sbr{\rbr{B^0}_3, \rbr{g}_2}_\text{P} \Bigr).
+\end{split}
+\end{equation}
+The fundamental ones different from Poisson brackets are
+\begin{equation}
+\sbr{\rfun{A_0}{\vec{x}_1},\rfun{A_i}{\vec{x}_2}}_\text{D} =
+m^{-2} \rbr{\partial_i}_1 \rfun{\delta}{\vec{x}_1 - \vec{x}_2},\qquad
+\sbr{\rfun{A_0}{\vec{x}_1},\rfun{B^0}{\vec{x}_2}}_\text{D} = 0.
+\end{equation}
 
-Di
-
-Introducing the standard coordinates
+Introducing the regularising coordinates
 \begin{alignat}{3}
 \alpha_i &= A_i + m^{-2}\rbr{\partial_i B^0 - J_i},&\qquad \beta^i &= B^i; \\
 \alpha_0 &= A_0 + m^{-2}\rbr{\partial_i B^i - J_0},&\qquad \beta^0 &= B^0.
 \end{alignat}
-Note that $J^i = J_i$. One has
+Note that $J^i = J_i$. It is easy to show that
+\begin{align}
+\sbr{\rfun{\alpha_i}{\vec{x}_1},\rfun{\beta^j}{\vec{x}_2}}_\text{D} &= 
+\delta^i_j\rfun{\delta}{\vec{x}_1,\vec{x}_2},\\
+\sbr{\rfun{\alpha_i}{\vec{x}_1},\rfun{\alpha_j}{\vec{x}_2}}_\text{D} &= 0 =
+\sbr{\rfun{\beta^i}{\vec{x}_1},\rfun{\beta^j}{\vec{x}_2}}_\text{D}.
+\end{align}
+Furthermore, one has
 \begin{equation}
 \mscrH^\text{p} = \mscrH^\text{phy}+\mscrH^\text{con}+\mscrH^\text{irr},
 \end{equation}
@@ -547,10 +575,12 @@ Further more,
 \begin{equation}
 \Phi_1 = \beta^0,\qquad\Phi_2 = m^2\alpha_0 \propto \alpha_0.
 \end{equation}
-Thus the $\rbr{\alpha_i, \beta^i}$ are canonical pairs of physical variables, 
-whereas $\rbr{\alpha_0, \beta^0}$ are the unphysical variables as constraints. 
-The canonical dynamics of $\rbr{\alpha_i, \beta^i}$ are determined by 
-$\mscrH^\text{phy}$ as a regular system.
+Thus the $\rbr{\alpha_i, \beta^i}$ are regular pairs of canonical variables, 
+whereas $\rbr{\alpha_0, \beta^0}$ are the singular variables as constraints. 
+The canonical dynamics of the physical $\rbr{\alpha_i, \beta^i}$'s are 
+determined by $\mscrH^\text{phy}$ as a regular system.
+
+\textbf{Should one compute $\mscrH^\text{a}$ here?}
 
 
 For Maxwell theory $m = 0$.
