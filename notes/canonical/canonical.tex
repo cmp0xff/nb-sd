@@ -459,7 +459,7 @@ B^i \coloneqq \frpa{\Ld^\text{v}}{V_i} = V^i - \partial^i A_0;
 Hamiltonians
 \begin{align}
 \mscrH^\text{p} &= \mscrH^\text{c} + V_0 \Phi_1,\\
-\mscrH^\text{c} &= \frac{1}{2} \rbr{B^i}^2 - B^i \partial_i A_0 + \frac{1}{4} 
+\mscrH^\text{c} &= \frac{1}{2} \rbr{B^i}^2 + B^i \partial_i A_0 + \frac{1}{4} 
 F_{ij}^2 + \frac{m^2}{2} \rbr{-A_0^2 + A_i^2} - A_0 J^0 - A_i J^i,\\
 \end{align}
 where
@@ -470,40 +470,42 @@ is the only primary constraint.
 
 
 \begin{align}
-\sbr{{\Phi_1}_1,{\mscrH^\text{p}_2}}_\text{P} &=
-{B^i}_1 {\partial_i}_2 \sbr{{B^0}_2, {A_0}_2}_\text{P} +
-\frac{m^2}{2}\sbr{{B^0}_1, {A_0^2}_2}_\text{P} -
-\sbr{{B^0}_1, {A_0}_2}_\text{P} {J^0}_2 \nonumber \\
-&= \rbr{-{B^i}_2 {\partial_i}_2 - m^2 {A_0}_2 + {J^0}_2}
-\rfun{\delta}{\vec{x}_1 - \vec{x}_2}.
+\sbr{\rfun{\Phi_1}{\vec{x}_1},\rfun{\mscrH^\text{p}}{\vec{x}_2}}_\text{P} &=
+\sbr{\rbr{B^0}_1,\rbr{B^i\partial_i A_0-\frac{m^2}{2}A_0^2-A_0 J^0}_2}_\text{P}
+\nonumber \\
+&= \rbr{-B^i\partial_i + m^2 A_0 - J_0}_2 
+\rfun{\delta}{\vec{x}_1-\vec{x}_2},
 \end{align}
-Integration with $\dd^3 x_2$ yields the secondary constraint
+where $J_0 = -J^0$. Integration with $\dd^d x_2$ yields the secondary constraint
 \begin{equation}
-\sbr{\Phi_1, H^\text{p}}_\text{P} = \partial_i B^i - m^2 A_0 + J^0 
+\sbr{\Phi_1, H^\text{p}}_\text{P} = \partial_i B^i + m^2 A_0 - J_0 
 \eqqcolon \Phi_2,
 \end{equation}
 so that
 \begin{equation}
-\sbr{\Phi_1,\Phi_2}_\text{P} = -m^2\rfun{\delta}{\vec{x}_1-\vec{x}_2}.
+\sbr{\rfun{\Phi_1}{\vec{x}_1},\rfun{\Phi_2}{\vec{x}_2}}_\text{P} = 
+-m^2\rfun{\delta}{\vec{x}_1-\vec{x}_2}.
 \label{eq:Maxwell-Proca-Q}
 \end{equation}
 One may further compute
 \begin{equation}
-\sbr{{\Phi_2}_1, {\mscrH^\text{c}}_2}_\text{P} = \sbr{{\partial_i}_1 {B^i}_1,
-\frac{1}{4} {F_{jk}^2}_2 + \frac{m^2}{2} {A_j^2}_2 - {A_j}_2 {J^j}_2}_\text{P},
+\sbr{\rfun{\Phi_2}{\vec{x}_1}, \rfun{\mscrH^\text{c}}{\vec{x}_2}}_\text{P} = 
+\sbr{\rbr{\partial_i B^i}_1,
+\rbr{\frac{1}{4} F_{jk}^2 + \frac{m^2}{2} A_j^2 - A_j J^j}_2}_\text{P},
 \end{equation}
 in which
 \begin{align}
-\sbr{{\partial_i}_1 {B^i}_1, \frac{1}{4} {F_{jk}^2}_2}_\text{P} &=
-\rbr{{\partial_j}_2 {A_k}_2 - {\partial_k}_2 {A_j}_2}
-{\partial_i}_1 \sbr{{B^i}_1, \rbr{{\partial_j}_2 {A_k}_2}}_\text{P} \nonumber \\
-&= -{F^{ij}}_2 {\partial_i}_1{\partial_j}_2\rfun{\delta}{\vec{x}_1-\vec{x}_2}.
+\sbr{\rbr{\partial_i B^i}_1, \rbr{\frac{1}{4} F_{jk}^2}_2}_\text{P} &=
+\rbr{\partial_j A_k - \partial_k A_j}_2 \rbr{\partial_i}_1
+\sbr{\rbr{B^i}_1, \rbr{\partial^j A^k}_2}_\text{P} \nonumber \\
+&= -\rbr{F^{ij} \partial_j}_2 \rbr{\partial_i}_1
+\rfun{\delta}{\vec{x}_1-\vec{x}_2}.
 \end{align}
 The Poisson bracket can be evaluated to be
 \begin{equation}
-\sbr{{\Phi_2}_1, {\mscrH^\text{c}}_2}_\text{P} =
--\rbr{{F_{ij}}_2 {\partial_j}_2 + m^2 {A^i}_2 + {J^i}_2}
-{\partial_i}_1\rfun{\delta}{\vec{x}_1-\vec{x}_2}.
+\sbr{\rfun{\Phi_2}{\vec{x}_1}, \rfun{\mscrH^\text{c}}{\vec{x}_2}}_\text{P} =
+-\rbr{F^{ij} \partial_j + m^2 A^i + J^i}_2 \rbr{\partial_i}_1 
+\rfun{\delta}{\vec{x}_1-\vec{x}_2}.
 \end{equation}
 Integration with $\dd^3 x_2$ yields
 \begin{equation}
@@ -513,34 +515,42 @@ Integration with $\dd^3 x_2$ yields
 For Proca theory $m > 0$ , then the algorithm terminates, and one obtains a 
 pure second-class system.
 
-\begin{alignat}{3}
-\alpha_i &= A_i + m^{-2}\partial_i B^0,&\qquad \beta^i &= B^i; \\
-\alpha_0 &= A_0 + m^{-2}\partial_i B^i,&\qquad \beta^0 &= B^0.
-\end{alignat}
+Di
 
+Introducing the standard coordinates
+\begin{alignat}{3}
+\alpha_i &= A_i + m^{-2}\rbr{\partial_i B^0 - J_i},&\qquad \beta^i &= B^i; \\
+\alpha_0 &= A_0 + m^{-2}\rbr{\partial_i B^i - J_0},&\qquad \beta^0 &= B^0.
+\end{alignat}
+Note that $J^i = J_i$. One has
 \begin{equation}
-\mscrH^\text{p} = \mscrH^\text{phy}+\mscrH^\text{con}+\mscrH^\text{bon},
+\mscrH^\text{p} = \mscrH^\text{phy}+\mscrH^\text{con}+\mscrH^\text{irr},
 \end{equation}
 where
 \begin{align}
 \begin{split}
-\mscrH^\text{phy} &= \frac{1}{2}\rbr{\beta^i}^2 + 
-\frac{1}{2m^2}\rbr{\partial_i \beta^i}^2 + \frac{1}{4}\rbr{\partial_i \alpha_j - 
-\alpha_j \partial_i}^2 + \frac{m^2}{2}\alpha_i^2 \\
-&\quad -\alpha_i J^i + \frac{1}{m^2}\rbr{\partial_i \beta^i}J^0,
+\mscrH^\text{phy} &= \frac{1}{2}\rbr{\beta^i}^2 + \frac{m^2}{2}\alpha_i^2 +
+\frac{1}{4}\rbr{\partial_i \alpha_j - \partial_j \alpha_i}^2 + 
+\frac{1}{2m^2}\rbr{\partial_i \beta^i}^2 \\
+&\quad +\frac{1}{m^2} J^0 \partial_i \beta^i,
 \end{split}\\
-\begin{split}
 \mscrH^\text{con} &= -\frac{m^2}{2}\alpha_0^2 - \frac{1}{2m^2} 
-\rbr{\partial_i \beta^0}^2 \\
-&\quad -\alpha_0 J^0 + \frac{1}{m^2}\rbr{\rbr{\partial_i \beta^0} J^i - 
-\beta^0\rbr{\partial_i J^i}},
-\end{split}\\
-\mscrH^\text{bon} &= \partial_i\rbr{\alpha_0\beta^i - \beta^0\alpha_i} + 
-\frac{1}{m^2}\partial_i \rbr{\beta^0\partial_i \beta^0 - 
-\beta^i\partial_j\beta^j}.
+\rbr{\partial_i \beta^0}^2,\\
+\begin{split}
+\mscrH^\text{irr} &= \partial_i\rbr{\alpha_0\beta^i - \beta^0\alpha_i + 
+\frac{1}{m^2}\rbr{\beta^0\partial_i\beta^0 - 
+\beta^i\partial_j\beta^j - J^0 \beta^i}} \\
+&\quad + \frac{1}{2m^2}\rbr{\rbr{J^0}^2 - \rbr{J^i}^2}.
+\end{split}
 \end{align}
-
-
+Further more,
+\begin{equation}
+\Phi_1 = \beta^0,\qquad\Phi_2 = m^2\alpha_0 \propto \alpha_0.
+\end{equation}
+Thus the $\rbr{\alpha_i, \beta^i}$ are canonical pairs of physical variables, 
+whereas $\rbr{\alpha_0, \beta^0}$ are the unphysical variables as constraints. 
+The canonical dynamics of $\rbr{\alpha_i, \beta^i}$ are determined by 
+$\mscrH^\text{phy}$ as a regular system.
 
 
 For Maxwell theory $m = 0$.
